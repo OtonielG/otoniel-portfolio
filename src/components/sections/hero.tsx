@@ -6,8 +6,8 @@ export default function Hero() {
       <Image
         src="/images/hero/hero-picture.avif"
         alt="Otoniel Gómez, desarrollador frontend"
-        width={700}
-        height={900}
+        width={960}
+        height={1200}
         priority
       />
     </div>
