@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 body {
-  background-color: #020402;
+  background-color: #0a110a;
 }
 
 @theme {
@@ -19,4 +19,9 @@ body {
   --color-foreground: #f9f9f9;
   --color-muted: #959c89;
   --color-subtle: #6a7563;
+}
+
+.font-telma {
+  font-family: var(--font-telma), serif;
+  font-weight: 300;
 }
