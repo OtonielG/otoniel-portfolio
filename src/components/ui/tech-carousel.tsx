@@ -24,10 +24,7 @@ export default function TechCarousel() {
   const visibleItems = [...technologies, ...technologies];
 
   return (
-    <section
-      id="skills"
-      className="w-full overflow-hidden bg-surface py-6 text-muted"
-    >
+    <section className="w-full overflow-hidden bg-surface py-6 text-muted">
       <div className="relative flex overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_12%,black_88%,transparent)]">
         <div className="tech-carousel-track flex w-max items-center will-change-transform">
           {[0, 1].map((groupIndex) => (

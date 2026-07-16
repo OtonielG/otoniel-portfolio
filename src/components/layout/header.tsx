@@ -11,10 +11,6 @@ const navigationLinks = [
     href: "#sobre-mi",
   },
   {
-    label: "Skills",
-    href: "#skills",
-  },
-  {
     label: "Proyectos",
     href: "#proyectos",
   },
