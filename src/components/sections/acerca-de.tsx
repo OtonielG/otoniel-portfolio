@@ -3,7 +3,7 @@ import { BadgeCheck, Download, MapPin, Sparkles } from "lucide-react";
 
 export default function About() {
   return (
-    <section id="sobre-mi" className="bg-surface px-6 py-16 md:px-12 lg:px-20">
+    <section id="sobre-mi" className="bg-surface px-6 py-10 md:px-12 lg:px-20">
       <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:items-stretch">
         <div className="relative min-h-[450px] overflow-hidden rounded-3xl lg:min-h-[600px]">
           <Image
@@ -45,38 +45,41 @@ export default function About() {
             href="/documents/otoniel-gomez-cv.pdf"
             download="Otoniel-Gomez-CV.pdf"
             className="
-              mt-9
-              flex
-              w-fit
-              shrink-0
-              items-center
-              gap-2
-              whitespace-nowrap
-              rounded-full
-              bg-primary/60
-              px-4
-              py-2
-              text-sm
-              font-semibold
-              text-white
-              transition-all
+            mt-9
+            flex
+            w-full
+            shrink-0
+            items-center
+            justify-center
+            gap-2
+            whitespace-nowrap
+            rounded-full
+            bg-primary/60
+            px-4
+            py-2
+            text-sm
+            font-semibold
+            text-white
+            transition-all
 
-              hover:-translate-y-0.5
-              hover:bg-primary-hover/70
-              hover:shadow-[0_6px_20px_rgba(59,163,79,0.15)]
+            hover:-translate-y-0.5
+            hover:bg-primary-hover/70
+            hover:shadow-[0_6px_20px_rgba(59,163,79,0.15)]
 
-              focus-visible:outline-none
-              focus-visible:ring-2
-              focus-visible:ring-primary
-              focus-visible:ring-offset-2
-              focus-visible:ring-offset-background
+            focus-visible:outline-none
+            focus-visible:ring-2
+            focus-visible:ring-primary
+            focus-visible:ring-offset-2
+            focus-visible:ring-offset-background
 
-              md:px-4
-              md:py-2
-              md:text-base
+            sm:w-fit
 
-              lg:px-5
-              lg:py-2.5
+            md:px-4
+            md:py-2
+            md:text-base
+
+            lg:px-5
+            lg:py-2.5
             "
           >
             Descargar CV
