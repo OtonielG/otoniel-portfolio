@@ -17,11 +17,17 @@ body {
   --color-primary-dark: #257336;
 
   --color-foreground: #f9f9f9;
-  --color-muted: #959c89;
+  --color-muted: #a4aa9d;
   --color-subtle: #6a7563;
+  --color-display: #465443;
 }
 
 .font-telma {
   font-family: var(--font-telma), serif;
   font-weight: 300;
+}
+
+.font-technor {
+  font-family: var(--font-technor), sans-serif;
+  font-weight: 700;
 }
