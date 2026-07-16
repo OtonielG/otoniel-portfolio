@@ -38,7 +38,7 @@ export default function Hero() {
           pointer-events-none absolute left-1/2 top-[20%] z-20
           -translate-x-[calc(100%+17vw)]
           whitespace-nowrap font-telma text-[14vw] leading-none text-white
-          md:-translate-x-[calc(100%+110px)]
+          md:-translate-x-[calc(100%+clamp(110px,14svh,160px))]
           md:text-[110px]
           "
         >
@@ -51,7 +51,7 @@ export default function Hero() {
           pointer-events-none absolute left-1/2 top-[20%] z-20
           translate-x-[17vw]
           whitespace-nowrap font-telma text-[14vw] leading-none text-white
-          md:translate-x-[110px]
+          md:translate-x-[clamp(110px,14svh,160px)]
           md:text-[110px]
           "
         >
@@ -66,7 +66,7 @@ export default function Hero() {
           preload
           unoptimized
           sizes="(max-width: 767px) 90vw, 600px"
-          className="relative z-10 h-auto w-full object-contain object-bottom md:h-full md:w-auto"
+          className="relative z-10 h-auto w-full object-contain object-bottom md:h-full md:w-auto opacity-75"
         />
 
         <div
