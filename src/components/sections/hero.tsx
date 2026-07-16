@@ -72,7 +72,7 @@ export default function Hero() {
         <div className="relative md:h-full">
           <div
             aria-hidden="true"
-            className="pointer-events-none absolute -bottom-10 left-1/2 z-30 -translate-x-1/2 whitespace-nowrap font-technor text-[18vw] leading-[0.82] text-display md:hidden"
+            className="pointer-events-none absolute bottom-3 left-1/2 z-30 -translate-x-1/2 whitespace-nowrap font-technor text-[16vw] leading-[0.82] text-display md:hidden"
           >
             <p>DEV</p>
             <p>FRONTEND</p>
