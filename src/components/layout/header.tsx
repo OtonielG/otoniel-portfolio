@@ -136,14 +136,14 @@ export default function Navbar() {
             shrink-0
             whitespace-nowrap
             rounded-full
-            bg-primary
+            bg-primary/70
             px-4 py-2
             text-sm md:text-base font-semibold
             text-white
             transition-all
 
             hover:-translate-y-0.5
-            hover:bg-primary-hover
+            hover:bg-primary-hover/80
             hover:shadow-[0_6px_20px_rgba(59,163,79,0.15)]
 
             focus-visible:outline-none
@@ -159,7 +159,7 @@ export default function Navbar() {
             lg:py-2.5
           "
         >
-          Get in touch
+          Contáctame
         </Link>
       </nav>
     </header>
