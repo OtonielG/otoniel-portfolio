@@ -27,7 +27,7 @@ export default function Navbar() {
         fixed left-0 top-0 z-50
         flex h-17.5 w-full
         items-center justify-center
-        py-1
+        py-2
       "
     >
       <nav
