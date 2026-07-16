@@ -7,27 +7,32 @@ export default function Hero() {
       className="
         mt-[70px]
         flex
-        h-[calc(100svh-70px)]
         w-full
         items-end
         justify-center
         overflow-hidden
         px-4
+        md:h-[calc(100svh-70px)]
       "
     >
       <Image
-        src="/images/hero/hero-picture-main.avif"
+        src="/images/hero/hero-photo.avif"
         alt="Otoniel Gómez, desarrollador frontend"
         width={838}
         height={1132}
         preload
-        sizes="(max-width: 768px) 90vw, 838px"
+        unoptimized
+        sizes="(max-width: 767px) 90vw, 838px"
         className="
-          h-[90%]
-          w-auto
-          max-w-full
+          h-auto
+          w-full
+          max-w-[838px]
           object-contain
           object-bottom
+          sm:w-[85%]
+          md:h-[98%]
+          md:w-auto
+          md:max-w-full
         "
       />
     </section>
