@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 body {
-  /* background-color: #020402; */
+  background-color: #020402;
 }
 
 @theme {
