@@ -112,7 +112,7 @@ export default function Navbar() {
                 relative
                 whitespace-nowrap
                 text-base font-medium
-                text-foreground/70
+                text-foreground/60
                 transition-colors
 
               hover:text-foreground
