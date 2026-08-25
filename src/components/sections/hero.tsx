@@ -6,6 +6,7 @@ export default function Hero() {
       id="inicio"
       className="relative flex w-full items-end justify-center overflow-hidden bg-surface px-4 pt-[70px] md:h-svh"
     >
+      <h1 className="sr-only">Otoniel Gómez, Frontend Developer</h1>
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-0"
@@ -14,7 +15,7 @@ export default function Hero() {
             radial-gradient(
               circle at 50% 40%,
               rgba(59, 163, 79, 0.2) 0%,
-              transparent 42%
+              transparent 40%
             ),
             radial-gradient(
               circle at 15% 55%,
@@ -72,7 +73,7 @@ export default function Hero() {
         <div className="relative md:h-full">
           <div
             aria-hidden="true"
-            className="pointer-events-none absolute bottom-3 left-1/2 z-30 -translate-x-1/2 whitespace-nowrap font-technor text-[16vw] leading-[0.82] text-display md:hidden"
+            className="pointer-events-none absolute bottom-5 left-1/2 z-30 -translate-x-1/2 whitespace-nowrap font-technor text-[16vw] leading-[0.82] text-display md:hidden"
           >
             <p>DEV</p>
             <p>FRONTEND</p>
@@ -84,14 +85,13 @@ export default function Hero() {
             width={838}
             height={1132}
             preload
-            unoptimized
             sizes="(max-width: 767px) 90vw, 600px"
             className="relative z-10 h-auto w-full object-contain object-bottom opacity-75 md:h-full md:w-auto"
           />
 
           <div
             aria-hidden="true"
-            className="pointer-events-none absolute inset-x-0 bottom-0 z-20 h-16 bg-linear-to-b from-transparent to-surface"
+            className="pointer-events-none absolute inset-x-0 bottom-0 z-20 h-10 sm:h-12 md:h-16 bg-linear-to-b from-transparent to-surface"
           />
         </div>
       </div>
