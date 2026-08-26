@@ -33,7 +33,7 @@ export default function Hero() {
           trigger: sectionRef.current,
           start: "top top",
           end: "bottom top",
-          scrub: 1,
+          scrub: true,
         },
       });
 
