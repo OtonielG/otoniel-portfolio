@@ -6,6 +6,7 @@ export default function Home() {
     <>
       <Hero />
       <TechCarousel />
+      <div className="h-[1000px]"></div>
     </>
   );
 }
