@@ -26,14 +26,14 @@ export default function Hero() {
       }
 
       gsap.to(imageRef.current, {
-        scale: 1.6,
+        scale: 1.8,
         opacity: 0.25,
         ease: "none",
         scrollTrigger: {
           trigger: sectionRef.current,
           start: "top top",
           end: "bottom top",
-          scrub: true,
+          scrub: 1,
         },
       });
 
