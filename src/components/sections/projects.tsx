@@ -48,8 +48,9 @@ export default function Projects() {
         {projects.map((project) => (
           <li
             key={project.title}
+            tabIndex={0}
             className="
-              group relative bg-card/50 sm:w-[90%] md:w-[85%] lg:w-[80%] xl:w-[75%] 2xl:w-[70%] p-2 sm:p-3 border border-white/5 rounded-4xl overflow-hidden
+              group relative bg-card/50 sm:w-[90%] md:w-[85%] lg:w-[80%] xl:w-[75%] 2xl:w-[70%] p-2 sm:p-3 border border-white/5 rounded-4xl overflow-hidden outline-none
 
               before:absolute before:top-0 before:left-0 before:h-px before:w-full
               before:bg-[linear-gradient(to_right,transparent_0%,transparent_10%,rgba(255,255,255,0.75)_40%,rgba(255,255,255,0.75)_60%,transparent_90%,transparent_100%)]
@@ -88,7 +89,7 @@ export default function Projects() {
                   w-full h-full
                   bg-[radial-gradient(circle_at_top,var(--glow-color)_0%,transparent_98%)]
                   opacity-0 transition-opacity duration-500
-                  group-hover:opacity-20
+                  group-hover:opacity-20 group-focus:opacity-20
                 "
               />
               <div className="flex flex-col gap-2">
@@ -128,6 +129,7 @@ export default function Projects() {
                     translate-y-5
                     transition-transform duration-300
                     group-hover:translate-y-0
+                    group-focus:translate-y-0
                   "
                 >
                   <div className="rounded-t-lg md:rounded-t-xl lg:rounded-t-2xl overflow-hidden border border-white/30">
