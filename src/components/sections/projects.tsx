@@ -1,9 +1,6 @@
-import type { SVGProps } from "react";
 import { ArrowUpRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-
-type TechIconProps = SVGProps<SVGSVGElement>;
 
 const projects = [
   {
@@ -14,7 +11,6 @@ const projects = [
 
     links: {
       live: "https://www.laultimallamada.org/",
-      repository: null,
     },
     glowColor: "#39ff88",
   },
@@ -26,7 +22,6 @@ const projects = [
 
     links: {
       live: "https://www.laultimallamada.org/",
-      repository: null,
     },
     glowColor: "#32d9ff",
   },
@@ -38,7 +33,6 @@ const projects = [
 
     links: {
       live: "https://www.laultimallamada.org/",
-      repository: null,
     },
     glowColor: "#b86cff",
   },
@@ -55,7 +49,7 @@ export default function Projects() {
           <li
             key={project.title}
             className="
-              group relative bg-card/50 sm:w-[90%] md:w-[85%] lg:w-[80%] xl:w-[75%] 2xl:w-[70%] gap-5 p-2 sm:p-3 border border-white/5 rounded-4xl overflow-hidden
+              group relative bg-card/50 sm:w-[90%] md:w-[85%] lg:w-[80%] xl:w-[75%] 2xl:w-[70%] p-2 sm:p-3 border border-white/5 rounded-4xl overflow-hidden
 
               before:absolute before:top-0 before:left-0 before:h-px before:w-full
               before:bg-[linear-gradient(to_right,transparent_0%,transparent_10%,rgba(255,255,255,0.75)_40%,rgba(255,255,255,0.75)_60%,transparent_90%,transparent_100%)]
@@ -99,14 +93,14 @@ export default function Projects() {
               />
               <div className="flex flex-col gap-2">
                 <div className="flex justify-between gap-5">
-                  <h2
+                  <h3
                     className="
                       text-white font-zodiak text-base sm:text-lg md:text-xl xl:text-2xl
                       [text-shadow:0_0_14px_rgba(255,255,255,0.18)]
                     "
                   >
                     {project.title}
-                  </h2>
+                  </h3>
                   <Link
                     href={project.links.live}
                     target="_blank"
@@ -114,7 +108,10 @@ export default function Projects() {
                     aria-label={`Visitar ${project.title}`}
                     className="cursor-pointer"
                   >
-                    <ArrowUpRight className="text-white size-6 sm:size-7 md:size-8 xl:size-9 transition-transform duration-300 hover:scale-110 hover:translate-x-1 hover:-translate-y-1" />
+                    <ArrowUpRight
+                      aria-hidden="true"
+                      className="text-white size-6 sm:size-7 md:size-8 xl:size-9 transition-transform duration-300 hover:scale-110 hover:translate-x-1 hover:-translate-y-1"
+                    />
                   </Link>
                 </div>
                 <p className="text-white/70 text-xs sm:text-sm md:text-base xl:text-lg mb-2">
@@ -136,16 +133,20 @@ export default function Projects() {
                   <div className="rounded-t-lg md:rounded-t-xl lg:rounded-t-2xl overflow-hidden border border-white/30">
                     <Image
                       src="/images/projects/window-browser.avif"
-                      alt="Otoniel Gómez, desarrollador frontend"
+                      alt=""
+                      aria-hidden="true"
                       width={1188}
                       height={70}
-                      className="w-full z-10"
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 85vw, 75vw"
+                      className="w-full"
                     />
+
                     <Image
                       src={project.image}
-                      alt="Otoniel Gómez, desarrollador frontend"
+                      alt={`Vista previa de ${project.title}`}
                       width={1920}
                       height={171}
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 85vw, 75vw"
                       className="w-full"
                     />
                   </div>
@@ -156,13 +157,5 @@ export default function Projects() {
         ))}
       </ul>
     </section>
-  );
-}
-
-function GithubIcon(props: TechIconProps) {
-  return (
-    <svg viewBox="0 0 20 20" fill="currentColor" {...props}>
-      <path d="M10 0c5.523 0 10 4.59 10 10.253 0 4.529-2.862 8.371-6.833 9.728-.507.101-.687-.219-.687-.492 0-.338.012-1.442.012-2.814 0-.956-.32-1.58-.679-1.898 2.227-.254 4.567-1.121 4.567-5.059 0-1.12-.388-2.034-1.03-2.752.104-.259.447-1.302-.098-2.714 0 0-.838-.275-2.747 1.051A8.98 8.98 0 0 0 10 4.958a8.965 8.965 0 0 0-2.503.345C5.586 3.977 4.746 4.252 4.746 4.252c-.543 1.412-.2 2.455-.097 2.714-.639.718-1.03 1.632-1.03 2.752 0 3.928 2.335 4.808 4.556 5.067-.286.256-.545.708-.635 1.371-.57.262-2.018.715-2.91-.852 0 0-.529-.985-1.533-1.057 0 0-.975-.013-.068.623 0 0 .655.315 1.11 1.5 0 0 .587 1.83 3.369 1.21.005.857.014 1.665.014 1.909 0 .271-.184.588-.683.493C2.865 18.627 0 14.783 0 10.253 0 4.59 4.478 0 10 0Z" />
-    </svg>
   );
 }
