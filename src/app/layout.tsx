@@ -29,6 +29,13 @@ const technor = localFont({
   style: "normal",
 });
 
+const zodiak = localFont({
+  src: "../fonts/Zodiak-Regular.woff2",
+  variable: "--font-zodiak",
+  weight: "400",
+  style: "normal",
+});
+
 export const metadata: Metadata = {
   title: "Otoniel Gómez",
   description: "Portafolio personal de Otoniel Gómez",
@@ -42,7 +49,7 @@ export default function RootLayout({
   return (
     <html
       lang="es"
-      className={`${geistSans.variable} ${geistMono.variable} ${telma.variable} ${technor.variable} h-full antialiased`}
+      className={`${geistSans.variable} ${geistMono.variable} ${telma.variable} ${technor.variable} ${zodiak.variable} h-full antialiased`}
     >
       <body className="flex justify-center">
         <Headers />

@@ -31,3 +31,8 @@ body {
   font-family: var(--font-technor), sans-serif;
   font-weight: 700;
 }
+
+.font-zodiak {
+  font-family: var(--font-zodiak), serif;
+  font-weight: 400;
+}

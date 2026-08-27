@@ -16,18 +16,6 @@ const projects = [
       live: "https://www.laultimallamada.org/",
       repository: null,
     },
-
-    skills: [
-      "HTML",
-      "CSS",
-      "JavaScript",
-      "TypeScript",
-      "React",
-      "Next.js",
-      "Tailwind CSS",
-      "GSAP",
-    ],
-
     glowColor: "#39ff88",
   },
   {
@@ -40,18 +28,6 @@ const projects = [
       live: "https://www.laultimallamada.org/",
       repository: null,
     },
-
-    skills: [
-      "HTML",
-      "CSS",
-      "JavaScript",
-      "TypeScript",
-      "React",
-      "Next.js",
-      "Tailwind CSS",
-      "GSAP",
-    ],
-
     glowColor: "#32d9ff",
   },
   {
@@ -64,26 +40,14 @@ const projects = [
       live: "https://www.laultimallamada.org/",
       repository: null,
     },
-
-    skills: [
-      "HTML",
-      "CSS",
-      "JavaScript",
-      "TypeScript",
-      "React",
-      "Next.js",
-      "Tailwind CSS",
-      "GSAP",
-    ],
-
     glowColor: "#b86cff",
   },
 ];
 
 export default function Projects() {
   return (
-    <section className="w-full p-10">
-      <h2 className="font-technor text-display text-6xl text-center mb-10">
+    <section className="w-full px-4 py-10">
+      <h2 className="font-technor text-display text-3xl sm:text-4xl md:text-5xl xl:text-6xl text-center mb-10">
         Mis Proyectos
       </h2>
       <ul className="w-full flex flex-col gap-16 items-center">
@@ -91,7 +55,7 @@ export default function Projects() {
           <li
             key={project.title}
             className="
-              group relative bg-card/50 w-[75%] gap-5 p-3 border border-white/5 rounded-4xl overflow-hidden
+              group relative bg-card/50 sm:w-[90%] md:w-[85%] lg:w-[80%] xl:w-[75%] 2xl:w-[70%] gap-5 p-3 border border-white/5 rounded-4xl overflow-hidden
 
               before:absolute before:top-0 before:left-0 before:h-px before:w-full
               before:bg-[linear-gradient(to_right,transparent_0%,transparent_10%,rgba(255,255,255,0.75)_40%,rgba(255,255,255,0.75)_60%,transparent_90%,transparent_100%)]
@@ -108,30 +72,44 @@ export default function Projects() {
 
                 after:absolute after:top-0 after:left-1/2 after:-translate-x-1/2
                 after:w-full after:h-[80%]
-                after:bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.05),transparent_65%)]
+                after:bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.08),transparent_65%)]
                 after:pointer-events-none
               "
             >
+              <div
+                style={
+                  {
+                    "--glow-color": project.glowColor,
+                  } as React.CSSProperties
+                }
+                className="
+                  pointer-events-none absolute top-0 left-1/2 -translate-x-1/2
+                  w-full h-full
+                  bg-[radial-gradient(circle_at_top,var(--glow-color)_0%,transparent_98%)]
+                  opacity-0 transition-opacity duration-500
+                  group-hover:opacity-20
+                "
+              />
               <div className="flex flex-col gap-3">
                 <div className="flex justify-between">
-                  <h2 className="text-white font-serif text-2xl">
+                  <h2
+                    className="
+                      text-white font-zodiak text-2xl
+                      [text-shadow:0_0_14px_rgba(255,255,255,0.18)]
+                    "
+                  >
                     {project.title}
                   </h2>
                   <Link href={project.links.live} className="cursor-pointer">
                     <ArrowUpRight className="text-white size-8 transition-transform duration-300 hover:scale-110 hover:translate-x-1 hover:-translate-y-1" />
                   </Link>
                 </div>
-                <p className="text-white/80">{project.description}</p>
-                <ul className="w-full flex gap-3">
-                  {project.skills.map((skill) => (
-                    <li key={skill} className="text-white">
-                      {skill}
-                    </li>
-                  ))}
-                </ul>
+                <p className="text-white/70 text-lg mb-2">
+                  {project.description}
+                </p>
                 <div
                   className="
-                  w-full p-12 pb-0
+                  w-full p-10 pb-0
                   translate-y-5
                   transition-transform duration-300
                   group-hover:translate-y-0
