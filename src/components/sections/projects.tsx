@@ -107,7 +107,13 @@ export default function Projects() {
                   >
                     {project.title}
                   </h2>
-                  <Link href={project.links.live} className="cursor-pointer">
+                  <Link
+                    href={project.links.live}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`Visitar ${project.title}`}
+                    className="cursor-pointer"
+                  >
                     <ArrowUpRight className="text-white size-6 sm:size-7 md:size-8 xl:size-9 transition-transform duration-300 hover:scale-110 hover:translate-x-1 hover:-translate-y-1" />
                   </Link>
                 </div>
