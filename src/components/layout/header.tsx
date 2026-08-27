@@ -20,11 +20,12 @@ export default function Navbar() {
   return (
     <header
       className="
-        fixed left-0 top-0 z-50
-        flex h-17.5 w-full
-        items-center justify-center
-        py-2
-      "
+    fixed inset-x-0 top-0 z-50
+    mx-auto
+    flex h-17.5 w-full max-w-[1920px]
+    items-center justify-center
+    py-2
+  "
     >
       <nav
         aria-label="Navegación principal"

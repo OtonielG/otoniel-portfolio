@@ -44,7 +44,7 @@ export default function RootLayout({
       lang="es"
       className={`${geistSans.variable} ${geistMono.variable} ${telma.variable} ${technor.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">
+      <body className="flex justify-center">
         <Headers />
         {children}
       </body>
