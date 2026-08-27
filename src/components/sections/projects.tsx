@@ -47,7 +47,7 @@ const projects = [
 export default function Projects() {
   return (
     <section className="w-full px-4 py-12">
-      <h2 className="font-technor text-display text-3xl sm:text-4xl md:text-5xl xl:text-6xl text-center mb-10">
+      <h2 className="font-technor text-display text-3xl sm:text-4xl md:text-5xl xl:text-6xl text-center mb-7 md:mb-10">
         Mis Proyectos
       </h2>
       <ul className="w-full flex flex-col gap-8 md:gap-10 lg:gap-12 items-center">
