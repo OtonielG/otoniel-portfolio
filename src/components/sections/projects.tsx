@@ -106,7 +106,7 @@ export default function Projects() {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={`Visitar ${project.title}`}
-                    className="cursor-pointer"
+                    className="inline-flex items-center justify-center cursor-pointer"
                   >
                     <ArrowUpRight
                       aria-hidden="true"
@@ -137,6 +137,7 @@ export default function Projects() {
                       aria-hidden="true"
                       width={1188}
                       height={70}
+                      loading="lazy"
                       sizes="(max-width: 640px) 100vw, (max-width: 1024px) 85vw, 75vw"
                       className="w-full"
                     />
@@ -146,6 +147,7 @@ export default function Projects() {
                       alt={`Vista previa de ${project.title}`}
                       width={1920}
                       height={171}
+                      loading="lazy"
                       sizes="(max-width: 640px) 100vw, (max-width: 1024px) 85vw, 75vw"
                       className="w-full"
                     />
