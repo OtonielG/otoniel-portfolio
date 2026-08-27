@@ -46,16 +46,16 @@ const projects = [
 
 export default function Projects() {
   return (
-    <section className="w-full px-4 py-10">
+    <section className="w-full px-4 py-12">
       <h2 className="font-technor text-display text-3xl sm:text-4xl md:text-5xl xl:text-6xl text-center mb-10">
         Mis Proyectos
       </h2>
-      <ul className="w-full flex flex-col gap-16 items-center">
+      <ul className="w-full flex flex-col gap-8 md:gap-10 lg:gap-12 items-center">
         {projects.map((project) => (
           <li
             key={project.title}
             className="
-              group relative bg-card/50 sm:w-[90%] md:w-[85%] lg:w-[80%] xl:w-[75%] 2xl:w-[70%] gap-5 p-3 border border-white/5 rounded-4xl overflow-hidden
+              group relative bg-card/50 sm:w-[90%] md:w-[85%] lg:w-[80%] xl:w-[75%] 2xl:w-[70%] gap-5 p-2 sm:p-3 border border-white/5 rounded-4xl overflow-hidden
 
               before:absolute before:top-0 before:left-0 before:h-px before:w-full
               before:bg-[linear-gradient(to_right,transparent_0%,transparent_10%,rgba(255,255,255,0.75)_40%,rgba(255,255,255,0.75)_60%,transparent_90%,transparent_100%)]
@@ -64,7 +64,14 @@ export default function Projects() {
           >
             <div
               className="
-                relative bg-card w-full flex flex-col gap-5 p-12 pb-0 border border-white/20 rounded-3xl overflow-hidden
+                relative bg-card w-full flex flex-col gap-5
+
+                p-6 pb-0
+                sm:p-8 sm:pb-0
+                md:p-10 md:pb-0
+                xl:p-12 xl:pb-0
+
+                border border-white/20 rounded-3xl overflow-hidden
 
                 before:absolute before:top-0 before:left-0 before:h-px before:w-full
                 before:bg-[linear-gradient(to_right,transparent_0%,transparent_10%,rgba(255,255,255,0.55)_40%,rgba(255,255,255,0.55)_60%,transparent_90%,transparent_100%)]
@@ -90,30 +97,35 @@ export default function Projects() {
                   group-hover:opacity-20
                 "
               />
-              <div className="flex flex-col gap-3">
-                <div className="flex justify-between">
+              <div className="flex flex-col gap-2">
+                <div className="flex justify-between gap-5">
                   <h2
                     className="
-                      text-white font-zodiak text-2xl
+                      text-white font-zodiak text-base sm:text-lg md:text-xl xl:text-2xl
                       [text-shadow:0_0_14px_rgba(255,255,255,0.18)]
                     "
                   >
                     {project.title}
                   </h2>
                   <Link href={project.links.live} className="cursor-pointer">
-                    <ArrowUpRight className="text-white size-8 transition-transform duration-300 hover:scale-110 hover:translate-x-1 hover:-translate-y-1" />
+                    <ArrowUpRight className="text-white size-6 sm:size-7 md:size-8 xl:size-9 transition-transform duration-300 hover:scale-110 hover:translate-x-1 hover:-translate-y-1" />
                   </Link>
                 </div>
-                <p className="text-white/70 text-lg mb-2">
+                <p className="text-white/70 text-xs sm:text-sm md:text-base xl:text-lg mb-2">
                   {project.description}
                 </p>
                 <div
                   className="
-                  w-full p-10 pb-0
-                  translate-y-5
-                  transition-transform duration-300
-                  group-hover:translate-y-0
-                "
+                    w-full
+                    p-4 pb-0
+                    sm:p-6 sm:pb-0
+                    md:p-8 md:pb-0
+                    xl:p-10 xl:pb-0
+
+                    translate-y-5
+                    transition-transform duration-300
+                    group-hover:translate-y-0
+                  "
                 >
                   <div className="rounded-t-2xl overflow-hidden border border-white/30">
                     <Image
