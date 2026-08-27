@@ -6,7 +6,7 @@ const projects = [
   {
     title: "Sitio Oficial del Ministerio Cristiano La Última Llamada",
     description:
-      "Sitio web oficial desarrollado para el Ministerio Cristiano La Última Llamada.",
+      "Proyecto desarrollado desde cero con enfoque en diseño responsivo, rendimiento y SEO técnico, aplicando buenas prácticas de accesibilidad, estructura semántica y optimización para producción.",
     image: "/images/projects/la-ultima-llamada-img.avif",
 
     links: {
