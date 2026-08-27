@@ -1,6 +1,7 @@
 import type { SVGProps } from "react";
 import { ArrowUpRight } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 type TechIconProps = SVGProps<SVGSVGElement>;
 
@@ -89,46 +90,69 @@ export default function Projects() {
         {projects.map((project) => (
           <li
             key={project.title}
-            className="group bg-card w-[75%] flex flex-col gap-5 p-12 pb-0 rounded-4xl overflow-hidden"
+            className="
+              group relative bg-card/50 w-[75%] gap-5 p-3 border border-white/5 rounded-4xl overflow-hidden
+
+              before:absolute before:top-0 before:left-0 before:h-px before:w-full
+              before:bg-[linear-gradient(to_right,transparent_0%,transparent_10%,rgba(255,255,255,0.75)_40%,rgba(255,255,255,0.75)_60%,transparent_90%,transparent_100%)]
+              before:pointer-events-none
+            "
           >
-            <div className="flex flex-col gap-3">
-              <div className="flex justify-between">
-                <h2 className="text-white font-serif text-2xl">
-                  {project.title}
-                </h2>
-                <ArrowUpRight className="text-white size-8" />
-              </div>
-              <p className="text-white/80">{project.description}</p>
-              <ul className="w-full flex gap-3">
-                {project.skills.map((skill) => (
-                  <li key={skill} className="text-white">
-                    {skill}
-                  </li>
-                ))}
-              </ul>
-              <div
-                className="
+            <div
+              className="
+                relative bg-card w-full flex flex-col gap-5 p-12 pb-0 border border-white/20 rounded-3xl overflow-hidden
+
+                before:absolute before:top-0 before:left-0 before:h-px before:w-full
+                before:bg-[linear-gradient(to_right,transparent_0%,transparent_10%,rgba(255,255,255,0.55)_40%,rgba(255,255,255,0.55)_60%,transparent_90%,transparent_100%)]
+                before:pointer-events-none
+
+                after:absolute after:top-0 after:left-1/2 after:-translate-x-1/2
+                after:w-full after:h-[80%]
+                after:bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.05),transparent_65%)]
+                after:pointer-events-none
+              "
+            >
+              <div className="flex flex-col gap-3">
+                <div className="flex justify-between">
+                  <h2 className="text-white font-serif text-2xl">
+                    {project.title}
+                  </h2>
+                  <Link href={project.links.live} className="cursor-pointer">
+                    <ArrowUpRight className="text-white size-8 transition-transform duration-300 hover:scale-110 hover:translate-x-1 hover:-translate-y-1" />
+                  </Link>
+                </div>
+                <p className="text-white/80">{project.description}</p>
+                <ul className="w-full flex gap-3">
+                  {project.skills.map((skill) => (
+                    <li key={skill} className="text-white">
+                      {skill}
+                    </li>
+                  ))}
+                </ul>
+                <div
+                  className="
                   w-full p-12 pb-0
                   translate-y-5
                   transition-transform duration-300
                   group-hover:translate-y-0
                 "
-              >
-                <div className="rounded-t-2xl overflow-hidden border border-white/30">
-                  <Image
-                    src="/images/projects/window-browser.avif"
-                    alt="Otoniel Gómez, desarrollador frontend"
-                    width={1188}
-                    height={70}
-                    className="w-full z-10"
-                  />
-                  <Image
-                    src={project.image}
-                    alt="Otoniel Gómez, desarrollador frontend"
-                    width={1920}
-                    height={171}
-                    className="w-full"
-                  />
+                >
+                  <div className="rounded-t-2xl overflow-hidden border border-white/30">
+                    <Image
+                      src="/images/projects/window-browser.avif"
+                      alt="Otoniel Gómez, desarrollador frontend"
+                      width={1188}
+                      height={70}
+                      className="w-full z-10"
+                    />
+                    <Image
+                      src={project.image}
+                      alt="Otoniel Gómez, desarrollador frontend"
+                      width={1920}
+                      height={171}
+                      className="w-full"
+                    />
+                  </div>
                 </div>
               </div>
             </div>
