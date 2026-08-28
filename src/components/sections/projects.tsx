@@ -4,9 +4,9 @@ import Link from "next/link";
 
 const projects = [
   {
-    title: "Sitio Oficial del Ministerio Cristiano La Última Llamada",
+    title: "Sitio Web Oficial del Ministerio Cristiano La Última Llamada",
     description:
-      "Proyecto desarrollado desde cero con enfoque en diseño responsivo, rendimiento y SEO técnico, aplicando buenas prácticas de accesibilidad, estructura semántica y optimización para producción.",
+      "Sitio web desarrollado desde cero con enfoque en diseño responsivo, rendimiento y SEO técnico, aplicando buenas prácticas de accesibilidad, semántica y optimización para producción web.",
     image: "/images/projects/la-ultima-llamada-img.avif",
 
     links: {
@@ -15,9 +15,9 @@ const projects = [
     glowColor: "#39ff88",
   },
   {
-    title: "01",
+    title: "Buscaminas Interactivo con Gestión Compleja de Estado Global",
     description:
-      "Sitio web oficial desarrollado para el Ministerio Cristiano La Última Llamada.",
+      "Juego interactivo desarrollado con React y TypeScript, con lógica avanzada, gestión de estado global, generación dinámica del tablero y una arquitectura sólida, mantenible y escalable.",
     image: "/images/projects/la-ultima-llamada-img.avif",
 
     links: {
@@ -26,9 +26,9 @@ const projects = [
     glowColor: "#32d9ff",
   },
   {
-    title: "02",
+    title: "Plataforma Interactiva para Gestión y Visualización de Datos",
     description:
-      "Sitio web oficial desarrollado para el Ministerio Cristiano La Última Llamada.",
+      "Plataforma web desarrollada con React y TypeScript para gestionar y visualizar datos, con componentes reutilizables, filtros dinámicos y una arquitectura limpia, mantenible y escalable.",
     image: "/images/projects/la-ultima-llamada-img.avif",
 
     links: {
@@ -95,31 +95,52 @@ export default function Projects() {
                 "
               />
               <div className="flex flex-col gap-2">
-                <div className="flex justify-between gap-5">
-                  <h3
-                    className="
-                      text-white font-zodiak text-base sm:text-lg md:text-xl xl:text-2xl
-                      [text-shadow:0_0_14px_rgba(255,255,255,0.18)]
-                    "
-                  >
-                    {project.title}
-                  </h3>
-                  <Link
-                    href={project.links.live}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={`Visitar ${project.title}`}
-                    className="inline-flex items-center justify-center cursor-pointer"
-                  >
-                    <ArrowUpRight
-                      aria-hidden="true"
-                      className="text-white size-6 sm:size-7 md:size-8 xl:size-9 transition-transform duration-300 hover:scale-110 hover:translate-x-1 hover:-translate-y-1"
-                    />
-                  </Link>
+                <div
+                  className="
+                    flex flex-col gap-2
+                    min-h-[170px]
+
+                    min-[370px]:min-h-[160px]
+                    min-[400px]:min-h-[150px]
+                    min-[440px]:min-h-[130px]
+                    min-[470px]:min-h-[120px]
+                    min-[570px]:min-h-[110px]
+
+                    sm:min-h-[130px]
+                    md:min-h-[140px]
+                    xl:min-h-[135px]
+                    2xl:min-h-[120px]
+                  "
+                >
+                  <div className="flex justify-between gap-5">
+                    <h3
+                      className="
+                        text-white font-zodiak text-base sm:text-lg md:text-xl xl:text-2xl
+                        [text-shadow:0_0_14px_rgba(255,255,255,0.18)]
+                      "
+                    >
+                      {project.title}
+                    </h3>
+
+                    <Link
+                      href={project.links.live}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`Visitar ${project.title}`}
+                      className="inline-flex items-center justify-center cursor-pointer shrink-0"
+                    >
+                      <ArrowUpRight
+                        aria-hidden="true"
+                        className="text-white size-6 sm:size-7 md:size-8 xl:size-9 transition-transform duration-300 hover:scale-110 hover:translate-x-1 hover:-translate-y-1"
+                      />
+                    </Link>
+                  </div>
+
+                  <p className="text-white/70 text-xs sm:text-sm md:text-base xl:text-lg">
+                    {project.description}
+                  </p>
                 </div>
-                <p className="text-white/70 text-xs sm:text-sm md:text-base xl:text-lg mb-2">
-                  {project.description}
-                </p>
+
                 <div
                   className="
                     w-full
