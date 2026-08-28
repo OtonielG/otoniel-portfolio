@@ -1,6 +1,14 @@
+"use client";
+
+import { useRef } from "react";
 import { ArrowUpRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 const projects = [
   {
@@ -39,8 +47,35 @@ const projects = [
 ];
 
 export default function Projects() {
+  const sectionRef = useRef<HTMLElement | null>(null);
+
+  useGSAP(
+    () => {
+      if (!sectionRef.current) return;
+
+      const cards = gsap.utils.toArray<HTMLElement>(
+        ".card-stack",
+        sectionRef.current,
+      );
+
+      cards.forEach((card) => {
+        gsap.to(card, {
+          scale: 0.7,
+          ease: "none",
+          scrollTrigger: {
+            trigger: card,
+            start: "top 80px",
+            end: "+=400",
+            scrub: 1,
+          },
+        });
+      });
+    },
+    { scope: sectionRef },
+  );
+
   return (
-    <section className="w-full px-4 py-12">
+    <section ref={sectionRef} className="w-full px-4 py-12">
       <h2 className="font-technor text-display text-3xl sm:text-4xl md:text-5xl xl:text-6xl text-center mb-6 md:mb-10">
         Mis Proyectos
       </h2>

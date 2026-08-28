@@ -40,4 +40,6 @@ body {
 .card-stack {
   position: sticky;
   top: 80px;
+  transform-origin: top center;
+  will-change: transform;
 }
