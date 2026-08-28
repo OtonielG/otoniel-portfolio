@@ -58,13 +58,15 @@ export default function Projects() {
         sectionRef.current,
       );
 
-      cards.forEach((card) => {
+      cards.forEach((card, index) => {
+        const isLastCard = index === cards.length - 1;
+
         gsap.to(card, {
           scale: 0.7,
           ease: "none",
           scrollTrigger: {
             trigger: card,
-            start: "top 80px",
+            start: isLastCard ? "top 120px" : "top 80px",
             end: "+=400",
             scrub: 1,
           },
