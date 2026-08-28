@@ -36,3 +36,23 @@ body {
   font-family: var(--font-zodiak), serif;
   font-weight: 400;
 }
+
+.card-stack-animation {
+  position: sticky;
+  top: 80px;
+  animation: stack 1s linear both;
+}
+
+@keyframes stack {
+  0% {
+    transform: translateY(0) translateZ(0) rotateX(0) scale(1);
+  }
+
+  35% {
+    transform: translateY(100px) translateZ(-200) rotateX(8deg) scale(0.92);
+  }
+
+  100% {
+    transform: translateY(0) translateZ(0) scale(1);
+  }
+}

@@ -44,12 +44,14 @@ export default function Projects() {
       <h2 className="font-technor text-display text-3xl sm:text-4xl md:text-5xl xl:text-6xl text-center mb-6 md:mb-10">
         Mis Proyectos
       </h2>
-      <ul className="w-full flex flex-col gap-8 md:gap-10 lg:gap-12 items-center">
+      <ul className="card-stack w-full flex flex-col gap-8 md:gap-10 lg:gap-12 items-center">
         {projects.map((project) => (
           <li
             key={project.title}
             tabIndex={0}
             className="
+              card-item
+              card-stack-animation
               group relative bg-card/50 sm:w-[90%] md:w-[85%] lg:w-[80%] xl:w-[75%] 2xl:w-[70%] p-2 sm:p-3 border border-white/5 rounded-4xl overflow-hidden outline-none
 
               before:absolute before:top-0 before:left-0 before:h-px before:w-full
