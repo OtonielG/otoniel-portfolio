@@ -29,9 +29,18 @@ export default function About() {
           src="/images/about/libros.avif"
           alt=""
           width={1184}
-          height={841}
-          className="absolute bottom-[6.4%] h-[26%] left-[0.4%] sm:left-[5.2%] md:left-[12.5%] lg:left-[17.5%] xl:left-[20%] w-auto z-30"
+          height={1254}
+          className="absolute bottom-[6.4%] h-[26%] sm:left-[5.2%] md:left-[12.5%] lg:left-[17.5%] xl:left-[20%] w-auto z-30"
         />
+        {/* HEADSETS */}
+        <Image
+          src="/images/about/headsets-sony.avif"
+          alt=""
+          width={1005}
+          height={841}
+          className="absolute bottom-[7.2%] h-[22%] sm:left-[17.2%] md:left-[22.6%] lg:left-[26.2%] xl:left-[28%] w-auto z-30"
+        />
+        {/* GABU */}
         <Image
           src="/images/about/gabu.avif"
           alt=""
@@ -39,6 +48,7 @@ export default function About() {
           height={1203}
           className="absolute bottom-0 left-[4%] sm:left-[9%] md:left-[16%] lg:left-[20%] xl:left-[22%] 2xl:left-[25%] h-[75%] w-auto"
         />
+        {/* MI COS */}
         <Image
           src="/images/about/mi-cosa.avif"
           alt=""
