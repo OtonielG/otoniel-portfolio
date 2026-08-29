@@ -23,7 +23,7 @@ export default function About() {
           alt=""
           width={905}
           height={1662}
-          className="absolute bottom-5 right-[1%] sm:right-[6%] md:right-[11%] xl:right-[16%] 2xl:right-[18%] h-[80%] w-auto"
+          className="absolute bottom-3 sm:bottom-5 right-[1%] sm:right-[6%] md:right-[11%] xl:right-[16%] 2xl:right-[18%] h-[80%] w-auto"
         />
       </div>
     </section>
