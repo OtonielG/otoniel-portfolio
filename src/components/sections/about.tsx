@@ -12,6 +12,24 @@ import { GmailIcon } from "../icons/gmail-icon";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
+const socialLinks = [
+  {
+    name: "LinkedIn",
+    href: "https://www.linkedin.com/in/otoniel-gomez-03gt/",
+    Icon: LinkedinIcon,
+  },
+  {
+    name: "GitHub",
+    href: "https://github.com/OtonielG",
+    Icon: GithubIcon,
+  },
+  {
+    name: "Gmail",
+    href: "mailto:otonielgomez993@gmail.com",
+    Icon: GmailIcon,
+  },
+];
+
 export default function About() {
   const sectionRef = useRef<HTMLElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -291,12 +309,21 @@ export default function About() {
         />
       </div>
 
-      <div className="flex items-center gap-5 mt-2 md:mt-4">
-        <LinkedinIcon className="size-6 sm:size-7 md:size-8 lg:size-9 xl:size-10 text-display cursor-pointer" />
-        <GithubIcon className="size-6 sm:size-7 md:size-8 lg:size-9 xl:size-10 text-display cursor-pointer" />
-        <GmailIcon className="size-6 sm:size-7 md:size-8 lg:size-9 xl:size-10 text-display cursor-pointer" />
+      <div className="flex items-center gap-5 md:gap-8 mt-2 md:mt-4">
+        {socialLinks.map(({ name, href, Icon }) => (
+          <a
+            key={name}
+            href={href}
+            target={name !== "Gmail" ? "_blank" : undefined}
+            rel={name !== "Gmail" ? "noopener noreferrer" : undefined}
+            aria-label={name}
+            className="hover:scale-115 transition-transform duration-300"
+          >
+            <Icon className="size-6 sm:size-7 md:size-8 lg:size-9 xl:size-10 text-display cursor-pointer" />
+          </a>
+        ))}
       </div>
-      <p className="max-w-[480px] sm:max-w-[550px] md:max-w-[730px] text-center text-muted/80 text-sm sm:text-base md:text-lg">
+      <p className="px-3 max-w-[480px] sm:max-w-[550px] md:max-w-[730px] text-center text-muted/80 text-sm sm:text-base md:text-lg">
         Soy Otoniel Gómez, frontend developer de{" "}
         <strong className="text-muted">Guatemala</strong>. En el código suelo
         trabajar con <strong className="text-muted">React</strong> y{" "}
