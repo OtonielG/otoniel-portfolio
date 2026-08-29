@@ -9,7 +9,14 @@ export default function About() {
           alt=""
           width={1647}
           height={693}
-          className="w-full sm:w-[90%] md:w-[85%] xl:w-[75%] 2xl:w-[70%]"
+          className="w-full sm:w-[90%] md:w-[80%] xl:w-[70%] 2xl:w-[65%] z-20"
+        />
+        <Image
+          src="/images/about/gabu.avif"
+          alt=""
+          width={1144}
+          height={1203}
+          className="absolute bottom-0 left-[4%] sm:left-[9%] md:left-[13%] xl:left-[18%] 2xl:left-[20%] h-[75%] w-auto"
         />
       </div>
     </section>
