@@ -180,6 +180,9 @@ export default function About() {
       ref={sectionRef}
       className="w-full flex flex-col items-center justify-center gap-5 px-4 py-10"
     >
+      <h2 className="font-technor text-display text-3xl sm:text-4xl md:text-5xl xl:text-6xl text-center">
+        Sobre Mí
+      </h2>
       <div
         ref={containerRef}
         className="relative w-full flex justify-center items-center overflow-hidden"
