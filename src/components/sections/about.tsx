@@ -296,6 +296,18 @@ export default function About() {
         <GithubIcon className="size-6 sm:size-7 md:size-8 lg:size-9 xl:size-10 text-display cursor-pointer" />
         <GmailIcon className="size-6 sm:size-7 md:size-8 lg:size-9 xl:size-10 text-display cursor-pointer" />
       </div>
+      <p className="px-2 max-w-[530px] sm:max-w-[570px] md:max-w-[670px] xl:max-w-2xl text-center text-muted/80 text-sm sm:text-base md:text-lg">
+        Soy Otoniel, frontend developer de{" "}
+        <strong className="text-muted">Guatemala</strong>. Trabajo con{" "}
+        <strong className="text-muted">React</strong> y{" "}
+        <strong className="text-muted">Next.js</strong>, y hablo{" "}
+        <strong className="text-muted">español</strong>,{" "}
+        <strong className="text-muted">inglés</strong> y{" "}
+        <strong className="text-muted">portugués</strong>. Me gusta entender
+        cómo funcionan las cosas por dentro, no solo hacer que se vean bien en
+        pantalla. Fuera del código, los videojuegos y mis perritas suelen estar
+        cerca.
+      </p>
     </section>
   );
 }
