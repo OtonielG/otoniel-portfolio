@@ -35,7 +35,6 @@ export default function About() {
           nintendoRef.current,
         ],
         {
-          opacity: 0,
           scale: 0.1,
           transformOrigin: "center center",
         },
@@ -69,6 +68,7 @@ export default function About() {
       tl.to(
         myselfRef.current,
         {
+          opacity: 1,
           yPercent: 0,
           duration: 0.5,
           ease: "power3.out",
@@ -80,6 +80,7 @@ export default function About() {
       tl.to(
         gabuRef.current,
         {
+          opacity: 1,
           yPercent: 0,
           duration: 0.5,
           ease: "power3.out",
@@ -91,6 +92,7 @@ export default function About() {
       tl.to(
         miCosaRef.current,
         {
+          opacity: 1,
           yPercent: 0,
           duration: 0.5,
           ease: "power3.out",
@@ -186,7 +188,7 @@ export default function About() {
           alt=""
           width={1184}
           height={1254}
-          className="absolute bottom-[6.4%] h-[26%] left-[5%] sm:left-[5.2%] md:left-[12.5%] lg:left-[17.5%] xl:left-[20%] 2xl:left-[22.5%] w-auto z-30"
+          className="opacity-0 absolute bottom-[6.4%] h-[26%] left-[5%] sm:left-[5.2%] md:left-[12.5%] lg:left-[17.5%] xl:left-[20%] 2xl:left-[22.5%] w-auto z-30"
         />
 
         {/* HEADSETS */}
@@ -196,7 +198,7 @@ export default function About() {
           alt=""
           width={1005}
           height={841}
-          className="absolute bottom-[7.2%] h-[22%] left-[18%] sm:left-[17.2%] md:left-[22.6%] lg:left-[26.2%] xl:left-[28%] 2xl:left-[30%] w-auto z-30"
+          className="opacity-0 absolute bottom-[7.2%] h-[22%] left-[18%] sm:left-[17.2%] md:left-[22.6%] lg:left-[26.2%] xl:left-[28%] 2xl:left-[30%] w-auto z-30"
         />
 
         {/* TAZA */}
@@ -206,7 +208,7 @@ export default function About() {
           alt=""
           width={313}
           height={244}
-          className="absolute bottom-[9%] h-[17%] left-[33%] sm:left-[26.5%] md:left-[30.5%] lg:left-[33%] xl:left-[34.4%] 2xl:left-[35.7%] w-auto z-30"
+          className="opacity-0 absolute bottom-[9%] h-[17%] left-[33%] sm:left-[26.5%] md:left-[30.5%] lg:left-[33%] xl:left-[34.4%] 2xl:left-[35.7%] w-auto z-30"
         />
 
         {/* LAPTOP */}
@@ -216,7 +218,7 @@ export default function About() {
           alt=""
           width={1516}
           height={935}
-          className="absolute bottom-[6%] h-[47%] right-[10%] sm:right-[22.8%] md:right-[27.4%] lg:right-[30.4%] xl:right-[32%] 2xl:right-[33.5%] w-auto z-30"
+          className="opacity-0 absolute bottom-[6%] h-[47%] right-[10%] sm:right-[22.8%] md:right-[27.4%] lg:right-[30.4%] xl:right-[32%] 2xl:right-[33.5%] w-auto z-30"
         />
 
         {/* NINTENDO SWITCH */}
@@ -226,7 +228,7 @@ export default function About() {
           alt=""
           width={1729}
           height={667}
-          className="hidden sm:block absolute bottom-[7%] h-[12.5%] sm:right-[13%] md:right-[19%] lg:right-[23%] xl:right-[25.2%] 2xl:right-[27.5%] w-auto z-30
+          className="hidden opacity-0 sm:block absolute bottom-[7%] h-[12.5%] sm:right-[13%] md:right-[19%] lg:right-[23%] xl:right-[25.2%] 2xl:right-[27.5%] w-auto z-30
           transform-[perspective(1000px)_rotateX(20deg)]"
         />
 
@@ -237,7 +239,7 @@ export default function About() {
           alt=""
           width={496}
           height={1231}
-          className="absolute bottom-[10%] h-[33%] right-[5%] sm:right-[8%] md:right-[15%] lg:right-[19.5%] xl:right-[21.8%] 2xl:right-[24.2%] w-auto z-30"
+          className="opacity-0 absolute bottom-[10%] h-[33%] right-[5%] sm:right-[8%] md:right-[15%] lg:right-[19.5%] xl:right-[21.8%] 2xl:right-[24.2%] w-auto z-30"
         />
 
         {/* MYSELF */}
@@ -247,7 +249,7 @@ export default function About() {
           alt=""
           width={1292}
           height={1218}
-          className="absolute h-[80%] bottom-[16%] right-[25%] sm:right-[36.3%] md:right-[38.5%] lg:right-[40.5%] xl:right-[41.5%] 2xl:right-[41.5%] w-auto z-10"
+          className="opacity-0 absolute h-[80%] bottom-[16%] right-[25%] sm:right-[36.3%] md:right-[38.5%] lg:right-[40.5%] xl:right-[41.5%] 2xl:right-[41.5%] w-auto z-10"
         />
 
         {/* GABU */}
@@ -257,7 +259,7 @@ export default function About() {
           alt=""
           width={1144}
           height={1203}
-          className="absolute bottom-0 left-[14%] sm:left-[9%] md:left-[16%] lg:left-[20%] xl:left-[22%] 2xl:left-[25%] h-[75%] w-auto"
+          className="opacity-0 absolute bottom-0 left-[14%] sm:left-[9%] md:left-[16%] lg:left-[20%] xl:left-[22%] 2xl:left-[25%] h-[75%] w-auto"
         />
 
         {/* MI COSA */}
@@ -267,7 +269,7 @@ export default function About() {
           alt=""
           width={905}
           height={1662}
-          className="hidden sm:block absolute bottom-3 sm:bottom-5 right-[1%] sm:right-[7%] md:right-[14%] lg:right-[19%] xl:right-[21.5%] 2xl:right-[24%] h-[80%] w-auto"
+          className="hidden opacity-0 sm:block absolute bottom-3 sm:bottom-5 right-[1%] sm:right-[7%] md:right-[14%] lg:right-[19%] xl:right-[21.5%] 2xl:right-[24%] h-[80%] w-auto"
         />
       </div>
 
