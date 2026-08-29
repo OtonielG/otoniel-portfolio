@@ -18,6 +18,13 @@ export default function About() {
           height={1203}
           className="absolute bottom-0 left-[4%] sm:left-[9%] md:left-[13%] xl:left-[18%] 2xl:left-[20%] h-[75%] w-auto"
         />
+        <Image
+          src="/images/about/mi-cosa.avif"
+          alt=""
+          width={905}
+          height={1662}
+          className="absolute bottom-5 right-[1%] sm:right-[6%] md:right-[11%] xl:right-[16%] 2xl:right-[18%] h-[80%] w-auto"
+        />
       </div>
     </section>
   );
