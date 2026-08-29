@@ -296,7 +296,7 @@ export default function About() {
         <GithubIcon className="size-6 sm:size-7 md:size-8 lg:size-9 xl:size-10 text-display cursor-pointer" />
         <GmailIcon className="size-6 sm:size-7 md:size-8 lg:size-9 xl:size-10 text-display cursor-pointer" />
       </div>
-      <p className="pmax-w-[480px] sm:max-w-[550px] md:max-w-[730px] text-center text-muted/80 text-sm sm:text-base md:text-lg">
+      <p className="max-w-[480px] sm:max-w-[550px] md:max-w-[730px] text-center text-muted/80 text-sm sm:text-base md:text-lg">
         Soy Otoniel Gómez, frontend developer de{" "}
         <strong className="text-muted">Guatemala</strong>. En el código suelo
         trabajar con <strong className="text-muted">React</strong> y{" "}
