@@ -9,20 +9,7 @@ export default function About() {
           alt=""
           width={2104}
           height={888}
-          className="opacity-80 w-full sm:w-[90%] md:w-[75%] lg:w-[65%] xl:w-[60%] 2xl:w-[55%] z-20"
-        />
-        <Image
-          src="/images/about/main-img-about.avif"
-          alt=""
-          width={1647}
-          height={693}
-          className="
-    absolute
-    left-1/2 top-1/2
-    -translate-x-1/2 -translate-y-1/2
-    w-full sm:w-[90%] md:w-[75%] lg:w-[65%] xl:w-[60%] 2xl:w-[55%]
-    z-10
-  "
+          className="w-full sm:w-[90%] md:w-[75%] lg:w-[65%] xl:w-[60%] 2xl:w-[55%] z-20"
         />
         {/* libros */}
         <Image
@@ -30,7 +17,7 @@ export default function About() {
           alt=""
           width={1184}
           height={1254}
-          className="absolute bottom-[6.4%] h-[26%] sm:left-[5.2%] md:left-[12.5%] lg:left-[17.5%] xl:left-[20%] 2xl:left-[22.5%] w-auto z-30"
+          className="absolute bottom-[6.4%] h-[26%] left-[5%] sm:left-[5.2%] md:left-[12.5%] lg:left-[17.5%] xl:left-[20%] 2xl:left-[22.5%] w-auto z-30"
         />
         {/* HEADSETS */}
         <Image
@@ -38,7 +25,7 @@ export default function About() {
           alt=""
           width={1005}
           height={841}
-          className="absolute bottom-[7.2%] h-[22%] sm:left-[17.2%] md:left-[22.6%] lg:left-[26.2%] xl:left-[28%] 2xl:left-[30%] w-auto z-30"
+          className="absolute bottom-[7.2%] h-[22%] left-[18%] sm:left-[17.2%] md:left-[22.6%] lg:left-[26.2%] xl:left-[28%] 2xl:left-[30%] w-auto z-30"
         />
         {/* TAZA */}
         <Image
@@ -46,7 +33,7 @@ export default function About() {
           alt=""
           width={313}
           height={244}
-          className="absolute bottom-[9%] h-[17%] sm:left-[26.5%] md:left-[30.5%] lg:left-[33%] xl:left-[34.4%] 2xl:left-[35.7%] w-auto z-30"
+          className="absolute bottom-[9%] h-[17%] left-[33%] sm:left-[26.5%] md:left-[30.5%] lg:left-[33%] xl:left-[34.4%] 2xl:left-[35.7%] w-auto z-30"
         />
         {/* LAPTOP */}
         <Image
@@ -54,7 +41,7 @@ export default function About() {
           alt=""
           width={1516}
           height={935}
-          className="absolute bottom-[6%] h-[47%] sm:right-[22.8%] md:right-[27.4%] lg:right-[30.4%] xl:right-[32%] 2xl:right-[33.5%] w-auto z-30"
+          className="absolute bottom-[6%] h-[47%] right-[10%] sm:right-[22.8%] md:right-[27.4%] lg:right-[30.4%] xl:right-[32%] 2xl:right-[33.5%] w-auto z-30"
         />
         {/* NINTENDO SWITCH */}
         <Image
@@ -62,8 +49,24 @@ export default function About() {
           alt=""
           width={1729}
           height={667}
-          className="absolute bottom-[7%] h-[12.5%] sm:right-[13%] md:right-[19%] lg:right-[23%] xl:right-[25.2%] 2xl:right-[27.5%] w-auto z-30
+          className="hidden sm:block absolute bottom-[7%] h-[12.5%] sm:right-[13%] md:right-[19%] lg:right-[23%] xl:right-[25.2%] 2xl:right-[27.5%] w-auto z-30
           transform-[perspective(1000px)_rotateX(20deg)]"
+        />
+        {/* BANDERA */}
+        <Image
+          src="/images/about/bandera.avif"
+          alt=""
+          width={496}
+          height={1231}
+          className="absolute bottom-[10%] h-[33%] right-[5%] sm:right-[8%] md:right-[15%] lg:right-[19.5%] xl:right-[21.8%] 2xl:right-[24.2%] w-auto z-30"
+        />
+        {/* MYSELF */}
+        <Image
+          src="/images/about/myself-photo.avif"
+          alt=""
+          width={1292}
+          height={1218}
+          className="absolute h-[80%] bottom-[16%] right-[25%] sm:right-[36.3%] md:right-[38.5%] lg:right-[40.5%] xl:right-[41.5%] 2xl:right-[41.5%] w-auto z-10"
         />
         {/* GABU */}
         <Image
@@ -71,7 +74,7 @@ export default function About() {
           alt=""
           width={1144}
           height={1203}
-          className="absolute bottom-0 left-[4%] sm:left-[9%] md:left-[16%] lg:left-[20%] xl:left-[22%] 2xl:left-[25%] h-[75%] w-auto"
+          className="absolute bottom-0 left-[14%] sm:left-[9%] md:left-[16%] lg:left-[20%] xl:left-[22%] 2xl:left-[25%] h-[75%] w-auto"
         />
         {/* MI COS */}
         <Image
@@ -79,7 +82,7 @@ export default function About() {
           alt=""
           width={905}
           height={1662}
-          className="absolute bottom-3 sm:bottom-5 right-[1%] sm:right-[6%] md:right-[13%] lg:right-[18%] xl:right-[21%] 2xl:right-[23%] h-[80%] w-auto"
+          className="hidden sm:block absolute bottom-3 sm:bottom-5 right-[1%] sm:right-[7%] md:right-[14%] lg:right-[19%] xl:right-[21.5%] 2xl:right-[24%] h-[80%] w-auto"
         />
       </div>
       <div></div>
