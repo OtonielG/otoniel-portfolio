@@ -181,7 +181,7 @@ export default function About() {
   return (
     <section
       ref={sectionRef}
-      className="w-full flex flex-col items-center justify-center gap-5 px-4 py-10"
+      className="w-full flex flex-col items-center justify-center gap-5 px-4 py-6 md:py-7 lg:py-8"
     >
       <h2 className="font-technor text-display text-3xl sm:text-4xl md:text-5xl xl:text-6xl text-center">
         Sobre Mí
