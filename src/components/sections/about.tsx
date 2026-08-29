@@ -167,7 +167,7 @@ export default function About() {
       });
 
       mm.add("(max-width: 1023px)", () => {
-        createAnimation("top 35%");
+        createAnimation("top 70%");
       });
 
       return () => mm.revert();
