@@ -30,7 +30,7 @@ export default function About() {
           alt=""
           width={1184}
           height={1254}
-          className="absolute bottom-[6.4%] h-[26%] sm:left-[5.2%] md:left-[12.5%] lg:left-[17.5%] xl:left-[20%] w-auto z-30"
+          className="absolute bottom-[6.4%] h-[26%] sm:left-[5.2%] md:left-[12.5%] lg:left-[17.5%] xl:left-[20%] 2xl:left-[22.5%] w-auto z-30"
         />
         {/* HEADSETS */}
         <Image
@@ -38,7 +38,7 @@ export default function About() {
           alt=""
           width={1005}
           height={841}
-          className="absolute bottom-[7.2%] h-[22%] sm:left-[17.2%] md:left-[22.6%] lg:left-[26.2%] xl:left-[28%] w-auto z-30"
+          className="absolute bottom-[7.2%] h-[22%] sm:left-[17.2%] md:left-[22.6%] lg:left-[26.2%] xl:left-[28%] 2xl:left-[30%] w-auto z-30"
         />
         {/* TAZA */}
         <Image
@@ -46,7 +46,15 @@ export default function About() {
           alt=""
           width={313}
           height={244}
-          className="absolute bottom-[9%] h-[17%] sm:left-[26.5%] md:left-[30.5%] lg:left-[33%] xl:left-[34.4%] w-auto z-30"
+          className="absolute bottom-[9%] h-[17%] sm:left-[26.5%] md:left-[30.5%] lg:left-[33%] xl:left-[34.4%] 2xl:left-[35.7%] w-auto z-30"
+        />
+        {/* LAPTOP */}
+        <Image
+          src="/images/about/legion-laptop.avif"
+          alt=""
+          width={1516}
+          height={935}
+          className="absolute bottom-[6%] h-[47%] sm:right-[22.8%] md:right-[27.4%] lg:right-[30.4%] xl:right-[32%] 2xl:right-[33.5%] w-auto z-30"
         />
         {/* GABU */}
         <Image
