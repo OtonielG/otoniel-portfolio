@@ -9,7 +9,7 @@ export default function About() {
           alt=""
           width={2104}
           height={888}
-          className="w-full sm:w-[90%] md:w-[75%] lg:w-[65%] xl:w-[60%] 2xl:w-[55%] z-20"
+          className="opacity-80 w-full sm:w-[90%] md:w-[75%] lg:w-[65%] xl:w-[60%] 2xl:w-[55%] z-20"
         />
         <Image
           src="/images/about/main-img-about.avif"
@@ -39,6 +39,14 @@ export default function About() {
           width={1005}
           height={841}
           className="absolute bottom-[7.2%] h-[22%] sm:left-[17.2%] md:left-[22.6%] lg:left-[26.2%] xl:left-[28%] w-auto z-30"
+        />
+        {/* TAZA */}
+        <Image
+          src="/images/about/taza.avif"
+          alt=""
+          width={313}
+          height={244}
+          className="absolute bottom-[9%] h-[17%] sm:left-[26.5%] md:left-[30.5%] lg:left-[33%] xl:left-[34.4%] w-auto z-30"
         />
         {/* GABU */}
         <Image
