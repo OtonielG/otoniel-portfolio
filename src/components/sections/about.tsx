@@ -6,6 +6,9 @@ import { useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
+import { LinkedinIcon } from "../icons/linkedin-icon";
+import { GithubIcon } from "../icons/github-icon";
+import { GmailIcon } from "../icons/gmail-icon";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
@@ -264,7 +267,7 @@ export default function About() {
           alt=""
           width={1292}
           height={1218}
-          className="opacity-0 absolute h-[80%] bottom-[16%] right-[25%] sm:right-[36.3%] md:right-[38.5%] lg:right-[40.5%] xl:right-[41.5%] 2xl:right-[41.5%] w-auto z-10"
+          className="opacity-0 absolute h-[84%] bottom-[16%] right-[23.2%] sm:right-[34.5%] md:right-[37%] lg:right-[39.5%] xl:right-[40.5%] 2xl:right-[40.5%] w-auto z-10"
         />
 
         {/* GABU */}
@@ -288,7 +291,11 @@ export default function About() {
         />
       </div>
 
-      <div></div>
+      <div className="flex items-center gap-5 mt-2 md:mt-4">
+        <LinkedinIcon className="size-6 sm:size-7 md:size-8 lg:size-9 xl:size-10 text-display cursor-pointer" />
+        <GithubIcon className="size-6 sm:size-7 md:size-8 lg:size-9 xl:size-10 text-display cursor-pointer" />
+        <GmailIcon className="size-6 sm:size-7 md:size-8 lg:size-9 xl:size-10 text-display cursor-pointer" />
+      </div>
     </section>
   );
 }
