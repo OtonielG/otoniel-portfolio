@@ -226,7 +226,7 @@ export default function About() {
           alt=""
           width={313}
           height={244}
-          className="opacity-0 absolute bottom-[9%] h-[17%] left-[33%] sm:left-[26.5%] md:left-[30.5%] lg:left-[33%] xl:left-[34.4%] 2xl:left-[35.7%] w-auto z-30"
+          className="opacity-0 absolute bottom-[9%] h-[17%] left-[27%] sm:left-[26.5%] md:left-[30.5%] lg:left-[33%] xl:left-[34.4%] 2xl:left-[35.7%] w-auto z-30"
         />
 
         {/* LAPTOP */}
@@ -236,7 +236,7 @@ export default function About() {
           alt=""
           width={1516}
           height={935}
-          className="opacity-0 absolute bottom-[6%] h-[47%] right-[10%] sm:right-[22.8%] md:right-[27.4%] lg:right-[30.4%] xl:right-[32%] 2xl:right-[33.5%] w-auto z-30"
+          className="opacity-0 absolute bottom-[6%] h-[47%] right-[20%] sm:right-[22.8%] md:right-[27.4%] lg:right-[30.4%] xl:right-[32%] 2xl:right-[33.5%] w-auto z-30"
         />
 
         {/* NINTENDO SWITCH */}
@@ -267,7 +267,7 @@ export default function About() {
           alt=""
           width={1292}
           height={1218}
-          className="opacity-0 absolute h-[84%] bottom-[16%] right-[23.2%] sm:right-[34.5%] md:right-[37%] lg:right-[39.5%] xl:right-[40.5%] 2xl:right-[40.5%] w-auto z-10"
+          className="opacity-0 absolute h-[84%] bottom-[16%] right-[33.7%] sm:right-[34.5%] md:right-[37%] lg:right-[39.5%] xl:right-[40.5%] 2xl:right-[40.5%] w-auto z-10"
         />
 
         {/* GABU */}
@@ -277,7 +277,7 @@ export default function About() {
           alt=""
           width={1144}
           height={1203}
-          className="opacity-0 absolute bottom-0 left-[14%] sm:left-[9%] md:left-[16%] lg:left-[20%] xl:left-[22%] 2xl:left-[25%] h-[75%] w-auto"
+          className="opacity-0 absolute bottom-0 left-[4%] sm:left-[9%] md:left-[16%] lg:left-[20%] xl:left-[22%] 2xl:left-[25%] h-[75%] w-auto"
         />
 
         {/* MI COSA */}
@@ -287,7 +287,7 @@ export default function About() {
           alt=""
           width={905}
           height={1662}
-          className="hidden opacity-0 sm:block absolute bottom-3 sm:bottom-5 right-[1%] sm:right-[7%] md:right-[14%] lg:right-[19%] xl:right-[21.5%] 2xl:right-[24%] h-[80%] w-auto"
+          className="opacity-0 absolute bottom-3 sm:bottom-5 right-[2%] sm:right-[7%] md:right-[14%] lg:right-[19%] xl:right-[21.5%] 2xl:right-[24%] h-[80%] w-auto"
         />
       </div>
 
