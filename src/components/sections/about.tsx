@@ -25,140 +25,152 @@ export default function About() {
 
   useGSAP(
     () => {
-      gsap.set(
-        [
+      const mm = gsap.matchMedia();
+
+      const createAnimation = (startValue: string) => {
+        const popItems = [
           laptopRef.current,
           librosRef.current,
           banderaRef.current,
           headsetsRef.current,
           tazaRef.current,
           nintendoRef.current,
-        ],
-        {
+        ];
+
+        const fromBottomItems = [
+          myselfRef.current,
+          gabuRef.current,
+          miCosaRef.current,
+        ];
+
+        gsap.set(popItems, {
+          opacity: 0,
           scale: 0.1,
           transformOrigin: "center center",
-        },
-      );
+        });
 
-      gsap.set([myselfRef.current, gabuRef.current, miCosaRef.current], {
-        yPercent: 100,
+        gsap.set(fromBottomItems, {
+          opacity: 0,
+          yPercent: 100,
+        });
+
+        const tl = gsap.timeline({
+          scrollTrigger: {
+            trigger: containerRef.current,
+            start: startValue,
+            toggleActions: "play none none reverse",
+          },
+        });
+
+        tl.to(
+          laptopRef.current,
+          {
+            opacity: 1,
+            scale: 1,
+            duration: 0.4,
+            ease: "back.out(1.5)",
+          },
+          0,
+        );
+
+        tl.to(
+          myselfRef.current,
+          {
+            opacity: 1,
+            yPercent: 0,
+            duration: 0.5,
+            ease: "power3.out",
+          },
+          0.2,
+        );
+
+        tl.to(
+          gabuRef.current,
+          {
+            opacity: 1,
+            yPercent: 0,
+            duration: 0.5,
+            ease: "power3.out",
+          },
+          0.4,
+        );
+
+        tl.to(
+          miCosaRef.current,
+          {
+            opacity: 1,
+            yPercent: 0,
+            duration: 0.5,
+            ease: "power3.out",
+          },
+          0.6,
+        );
+
+        tl.to(
+          librosRef.current,
+          {
+            opacity: 1,
+            scale: 1,
+            duration: 0.4,
+            ease: "back.out(1.5)",
+          },
+          0.8,
+        );
+
+        tl.to(
+          banderaRef.current,
+          {
+            opacity: 1,
+            scale: 1,
+            duration: 0.4,
+            ease: "back.out(1.5)",
+          },
+          1,
+        );
+
+        tl.to(
+          headsetsRef.current,
+          {
+            opacity: 1,
+            scale: 1,
+            duration: 0.4,
+            ease: "back.out(1.5)",
+          },
+          1.2,
+        );
+
+        tl.to(
+          tazaRef.current,
+          {
+            opacity: 1,
+            scale: 1,
+            duration: 0.4,
+            ease: "back.out(1.5)",
+          },
+          1.4,
+        );
+
+        tl.to(
+          nintendoRef.current,
+          {
+            opacity: 1,
+            scale: 1,
+            duration: 0.4,
+            ease: "back.out(1.5)",
+          },
+          1.6,
+        );
+      };
+
+      mm.add("(min-width: 1024px)", () => {
+        createAnimation("top 50%");
       });
 
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: containerRef.current,
-          start: "top 50%",
-          once: true,
-        },
+      mm.add("(max-width: 1023px)", () => {
+        createAnimation("top 35%");
       });
 
-      // 1. LAPTOP
-      tl.to(
-        laptopRef.current,
-        {
-          opacity: 1,
-          scale: 1,
-          duration: 0.4,
-          ease: "back.out(1.5)",
-        },
-        0,
-      );
-
-      // 2. MYSELF
-      tl.to(
-        myselfRef.current,
-        {
-          opacity: 1,
-          yPercent: 0,
-          duration: 0.5,
-          ease: "power3.out",
-        },
-        0.2,
-      );
-
-      // 3. GABU
-      tl.to(
-        gabuRef.current,
-        {
-          opacity: 1,
-          yPercent: 0,
-          duration: 0.5,
-          ease: "power3.out",
-        },
-        0.4,
-      );
-
-      // 4. MI COSA
-      tl.to(
-        miCosaRef.current,
-        {
-          opacity: 1,
-          yPercent: 0,
-          duration: 0.5,
-          ease: "power3.out",
-        },
-        0.6,
-      );
-
-      // 5. LIBROS
-      tl.to(
-        librosRef.current,
-        {
-          opacity: 1,
-          scale: 1,
-          duration: 0.4,
-          ease: "back.out(1.5)",
-        },
-        0.8,
-      );
-
-      // 6. BANDERA
-      tl.to(
-        banderaRef.current,
-        {
-          opacity: 1,
-          scale: 1,
-          duration: 0.4,
-          ease: "back.out(1.5)",
-        },
-        1,
-      );
-
-      // 7. HEADSETS
-      tl.to(
-        headsetsRef.current,
-        {
-          opacity: 1,
-          scale: 1,
-          duration: 0.4,
-          ease: "back.out(1.5)",
-        },
-        1.2,
-      );
-
-      // 8. TAZA
-      tl.to(
-        tazaRef.current,
-        {
-          opacity: 1,
-          scale: 1,
-          duration: 0.4,
-          ease: "back.out(1.5)",
-        },
-        1.4,
-      );
-
-      // 9. NINTENDO SWITCH
-      tl.to(
-        nintendoRef.current,
-        {
-          opacity: 1,
-          scale: 1,
-          duration: 0.4,
-          ease: "back.out(1.5)",
-        },
-        1.6,
-      );
+      return () => mm.revert();
     },
     { scope: sectionRef },
   );
