@@ -22,7 +22,7 @@ export default function Navbar() {
       className="
     fixed inset-x-0 top-0 z-50
     mx-auto
-    flex h-17.5 w-full max-w-[1920px]
+    flex md:h-16 lg:h-17 w-full max-w-[1920px]
     items-center justify-center
     py-2
   "

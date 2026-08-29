@@ -22,7 +22,7 @@ const technologies: Tech[] = [
 
 export default function TechCarousel() {
   return (
-    <section className="w-full overflow-hidden bg-surface py-6 text-muted">
+    <section className="w-full overflow-hidden bg-surface py-6 md:py-7 lg:py-8 text-muted">
       <div className="flex overflow-hidden mask-[linear-gradient(to_right,transparent,black_15%,black_85%,transparent)]">
         {[0, 1, 2].map((_, index) => (
           <div
