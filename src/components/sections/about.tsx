@@ -30,7 +30,7 @@ export default function About() {
           alt=""
           width={1184}
           height={841}
-          className="absolute bottom-4 sm:bottom-4.25 md:bottom-5 xl:bottom-6 h-[26%] left-[0.4%] sm:left-[5.2%] md:left-[12.5%] lg:left-[17.5%] xl:left-[20%] w-auto z-30"
+          className="absolute bottom-[6.4%] h-[26%] left-[0.4%] sm:left-[5.2%] md:left-[12.5%] lg:left-[17.5%] xl:left-[20%] w-auto z-30"
         />
         <Image
           src="/images/about/gabu.avif"
