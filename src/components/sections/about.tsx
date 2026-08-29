@@ -56,6 +56,15 @@ export default function About() {
           height={935}
           className="absolute bottom-[6%] h-[47%] sm:right-[22.8%] md:right-[27.4%] lg:right-[30.4%] xl:right-[32%] 2xl:right-[33.5%] w-auto z-30"
         />
+        {/* NINTENDO SWITCH */}
+        <Image
+          src="/images/about/nintendo-switch.avif"
+          alt=""
+          width={1729}
+          height={667}
+          className="absolute bottom-[7%] h-[12.5%] sm:right-[13%] md:right-[19%] lg:right-[23%] xl:right-[25.2%] 2xl:right-[27.5%] w-auto z-30
+          transform-[perspective(1000px)_rotateX(20deg)]"
+        />
         {/* GABU */}
         <Image
           src="/images/about/gabu.avif"
