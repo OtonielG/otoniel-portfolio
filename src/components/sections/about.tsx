@@ -322,6 +322,19 @@ export default function About() {
             <Icon className="size-6 sm:size-7 md:size-8 lg:size-9 xl:size-10 text-display cursor-pointer" />
           </a>
         ))}
+        <a
+          href="/cv/CV_Otoniel_Gomez.pdf"
+          download="CV_Otoniel_Gomez.pdf"
+          className="group relative overflow-hidden bg-display font-semibold px-4 py-2 rounded-full inline-block
+          hover:scale-110 transition-transform duration-300
+          "
+        >
+          <span className="absolute inset-0 bg-foreground/70 -translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-out" />
+
+          <span className="relative z-10 text-foreground/70 group-hover:text-display transition-colors duration-500">
+            Descargar CV
+          </span>
+        </a>
       </div>
       <p className="px-3 max-w-[480px] sm:max-w-[550px] md:max-w-[730px] text-center text-muted/80 text-sm sm:text-base md:text-lg">
         Soy Otoniel Gómez, frontend developer de{" "}
