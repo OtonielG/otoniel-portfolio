@@ -77,7 +77,11 @@ export default function Projects() {
   );
 
   return (
-    <section ref={sectionRef} className="w-full px-4 py-6 md:py-7 lg:py-8">
+    <section
+      id="proyectos"
+      ref={sectionRef}
+      className="w-full px-4 py-6 md:py-8 md:scroll-mt-7 lg:scroll-mt-8"
+    >
       <h2 className="font-technor text-display text-3xl sm:text-4xl md:text-5xl xl:text-6xl text-center mb-6 md:mb-10">
         Mis Proyectos
       </h2>
