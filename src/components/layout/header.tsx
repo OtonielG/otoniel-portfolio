@@ -57,8 +57,10 @@ export default function Navbar() {
           className="
             flex shrink-0 items-center gap-1
             text-foreground
-            transition-opacity
+            transition-all
             hover:opacity-80
+            hover:scale-105
+            duration-300
           "
         >
           <Image
