@@ -319,19 +319,19 @@ export default function About() {
             aria-label={name}
             className="hover:scale-115 transition-transform duration-300"
           >
-            <Icon className="size-6 sm:size-7 md:size-8 lg:size-9 xl:size-10 text-display cursor-pointer" />
+            <Icon className="size-6 sm:size-7 md:size-8 lg:size-9 xl:size-10 text-display cursor-pointer overflow-hidden" />
           </a>
         ))}
         <a
           href="/cv/CV_Otoniel_Gomez.pdf"
           download="CV_Otoniel_Gomez.pdf"
-          className="group relative overflow-hidden bg-display font-semibold px-4 py-2 rounded-full inline-block
-          hover:scale-110 transition-transform duration-300
+          className="group relative overflow-hidden bg-display font-semibold px-3 py-1 md:px-4 md:py-2 rounded-full inline-block
+          hover:scale-107 transition-transform duration-300
           "
         >
-          <span className="absolute inset-0 bg-foreground/70 -translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-out" />
+          <span className="absolute inset-0 bg-foreground/70 -translate-x-[101%] group-hover:translate-x-0 transition-transform duration-500 ease-out" />
 
-          <span className="relative z-10 text-foreground/70 group-hover:text-display transition-colors duration-500">
+          <span className="relative text-sm md:text-base z-10 text-foreground/70 group-hover:text-display transition-colors duration-500">
             Descargar CV
           </span>
         </a>
