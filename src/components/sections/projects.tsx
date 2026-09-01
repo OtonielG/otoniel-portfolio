@@ -74,10 +74,16 @@ export default function Projects() {
       });
 
       const refreshOnLoad = () => {
-        ScrollTrigger.refresh();
+        requestAnimationFrame(() => {
+          ScrollTrigger.refresh();
+        });
       };
 
-      window.addEventListener("load", refreshOnLoad);
+      if (document.readyState === "complete") {
+        refreshOnLoad();
+      } else {
+        window.addEventListener("load", refreshOnLoad);
+      }
 
       return () => {
         window.removeEventListener("load", refreshOnLoad);
