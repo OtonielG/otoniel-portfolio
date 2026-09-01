@@ -72,8 +72,11 @@ export default function Projects() {
 
         cards.forEach((card, index) => {
           const isLastCard = index === cards.length - 1;
+          const cardVisual = card.querySelector<HTMLElement>(".card-stack-visual");
 
-          gsap.to(card, {
+          if (!cardVisual) return;
+
+          gsap.to(cardVisual, {
             scale: 0.7,
             ease: "none",
             scrollTrigger: {
@@ -83,6 +86,22 @@ export default function Projects() {
               scrub: 1,
             },
           });
+
+          if (isLastCard) {
+            const cardHeight = cardVisual.offsetHeight;
+
+            gsap.set(card, { height: cardHeight });
+            gsap.to(card, {
+              height: cardHeight * 0.7,
+              ease: "none",
+              scrollTrigger: {
+                trigger: card,
+                start: "top 120px",
+                end: "+=400",
+                scrub: 1,
+              },
+            });
+          }
         });
       };
 
@@ -111,13 +130,19 @@ export default function Projects() {
             tabIndex={0}
             className="
               card-stack
-              group relative bg-card/50 sm:w-[90%] md:w-[85%] lg:w-[80%] xl:w-[75%] 2xl:w-[70%] p-2 sm:p-3 border border-white/5 rounded-4xl overflow-hidden outline-none
+              group sm:w-[90%] md:w-[85%] lg:w-[80%] xl:w-[75%] 2xl:w-[70%] outline-none
+            "
+          >
+            <article
+              className="
+              card-stack-visual
+              relative w-full origin-top bg-card/50 p-2 sm:p-3 border border-white/5 rounded-4xl overflow-hidden will-change-transform
 
               before:absolute before:top-0 before:left-0 before:h-px before:w-full
               before:bg-[linear-gradient(to_right,transparent_0%,transparent_10%,rgba(255,255,255,0.75)_40%,rgba(255,255,255,0.75)_60%,transparent_90%,transparent_100%)]
               before:pointer-events-none
             "
-          >
+            >
             <div
               className="
                 relative bg-card w-full flex flex-col gap-5
@@ -239,6 +264,7 @@ export default function Projects() {
                 </div>
               </div>
             </div>
+            </article>
           </li>
         ))}
       </ul>
