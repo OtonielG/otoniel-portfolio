@@ -41,10 +41,15 @@ body {
   font-weight: 400;
 }
 
+.skills-section {
+  view-timeline: --skills-section block;
+}
+
 .skill-container {
   animation: containerMove linear both;
-  animation-timeline: view();
-  animation-range: entry 20% exit 80%;
+  animation-timeline: --skills-section;
+  animation-range: entry 10% exit 90%;
+  will-change: transform;
 }
 
 @keyframes containerMove {
@@ -62,43 +67,24 @@ body {
 }
 
 .skill-card {
-  --card-perspective: 200px;
-
   animation: cardPerspective linear both;
-  animation-timeline: view();
-  animation-range: entry 40% exit 30%;
-}
-
-@media (min-width: 768px) {
-  .skill-card {
-    --card-perspective: 400px;
-  }
-}
-
-@media (min-width: 1024px) {
-  .skill-card {
-    --card-perspective: 600px;
-  }
-}
-
-@media (min-width: 1280px) {
-  .skill-card {
-    --card-perspective: 800px;
-  }
+  animation-timeline: --skills-section;
+  animation-range: entry 10% exit 90%;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+  will-change: transform;
 }
 
 @keyframes cardPerspective {
   0% {
-    transform: perspective(var(--card-perspective)) translateY(38px)
-      rotateY(-25deg);
+    transform: perspective(550px) translate3d(0, 28px, 0) rotateY(-24deg);
   }
 
   50% {
-    transform: perspective(var(--card-perspective)) translateY(0) rotateY(0deg);
+    transform: perspective(550px) translate3d(0, 0, 0) rotateY(0deg);
   }
 
   100% {
-    transform: perspective(var(--card-perspective)) translateY(38px)
-      rotateY(25deg);
+    transform: perspective(550px) translate3d(0, 28px, 0) rotateY(24deg);
   }
 }
