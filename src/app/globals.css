@@ -40,3 +40,65 @@ body {
   font-family: var(--font-zodiak), serif;
   font-weight: 400;
 }
+
+.skill-container {
+  animation: containerMove linear both;
+  animation-timeline: view();
+  animation-range: entry 20% exit 80%;
+}
+
+@keyframes containerMove {
+  0% {
+    transform: translateX(20%);
+  }
+
+  50% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-20%);
+  }
+}
+
+.skill-card {
+  --card-perspective: 200px;
+
+  animation: cardPerspective linear both;
+  animation-timeline: view();
+  animation-range: entry 40% exit 30%;
+}
+
+@media (min-width: 768px) {
+  .skill-card {
+    --card-perspective: 400px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .skill-card {
+    --card-perspective: 600px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .skill-card {
+    --card-perspective: 800px;
+  }
+}
+
+@keyframes cardPerspective {
+  0% {
+    transform: perspective(var(--card-perspective)) translateY(38px)
+      rotateY(-25deg);
+  }
+
+  50% {
+    transform: perspective(var(--card-perspective)) translateY(0) rotateY(0deg);
+  }
+
+  100% {
+    transform: perspective(var(--card-perspective)) translateY(38px)
+      rotateY(25deg);
+  }
+}
