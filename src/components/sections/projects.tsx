@@ -51,28 +51,29 @@ export default function Projects() {
 
   useGSAP(
     () => {
-      let cancelled = false;
+      // let cancelled = false;
 
       const setupScrollTriggers = async () => {
-        const images = Array.from(
-          sectionRef.current?.querySelectorAll("img") ?? [],
-        );
+        // const images = Array.from(
+        //   sectionRef.current?.querySelectorAll("img") ?? [],
+        // );
 
-        await Promise.all(
-          images.map((img) =>
-            img.complete
-              ? Promise.resolve()
-              : img.decode().catch(() => undefined),
-          ),
-        );
+        // await Promise.all(
+        //   images.map((img) =>
+        //     img.complete
+        //       ? Promise.resolve()
+        //       : img.decode().catch(() => undefined),
+        //   ),
+        // );
 
-        if (cancelled || !sectionRef.current) return;
+        // if (cancelled || !sectionRef.current) return;
 
         const cards = gsap.utils.toArray<HTMLElement>(".card-stack");
 
         cards.forEach((card, index) => {
           const isLastCard = index === cards.length - 1;
-          const cardVisual = card.querySelector<HTMLElement>(".card-stack-visual");
+          const cardVisual =
+            card.querySelector<HTMLElement>(".card-stack-visual");
 
           if (!cardVisual) return;
 
@@ -107,9 +108,9 @@ export default function Projects() {
 
       setupScrollTriggers();
 
-      return () => {
-        cancelled = true;
-      };
+      // return () => {
+      //   cancelled = true;
+      // };
     },
     { scope: sectionRef },
   );
@@ -143,8 +144,8 @@ export default function Projects() {
               before:pointer-events-none
             "
             >
-            <div
-              className="
+              <div
+                className="
                 relative bg-card w-full flex flex-col gap-5
 
                 p-6 pb-0
@@ -163,24 +164,24 @@ export default function Projects() {
                 after:bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.08),transparent_65%)]
                 after:pointer-events-none
               "
-            >
-              <div
-                style={
-                  {
-                    "--glow-color": project.glowColor,
-                  } as React.CSSProperties
-                }
-                className="
+              >
+                <div
+                  style={
+                    {
+                      "--glow-color": project.glowColor,
+                    } as React.CSSProperties
+                  }
+                  className="
                   pointer-events-none absolute top-0 left-1/2 -translate-x-1/2
                   w-full h-full
                   bg-[radial-gradient(circle_at_top,var(--glow-color)_0%,transparent_98%)]
                   opacity-0 transition-opacity duration-500
                   group-hover:opacity-20 group-focus:opacity-20
                 "
-              />
-              <div className="flex flex-col gap-2">
-                <div
-                  className="
+                />
+                <div className="flex flex-col gap-2">
+                  <div
+                    className="
                     flex flex-col gap-2
                     min-h-[170px]
 
@@ -195,38 +196,38 @@ export default function Projects() {
                     xl:min-h-[135px]
                     2xl:min-h-[120px]
                   "
-                >
-                  <div className="flex justify-between gap-5">
-                    <h3
-                      className="
+                  >
+                    <div className="flex justify-between gap-5">
+                      <h3
+                        className="
                         text-white font-zodiak text-base sm:text-lg md:text-xl xl:text-2xl
                         [text-shadow:0_0_14px_rgba(255,255,255,0.18)]
                       "
-                    >
-                      {project.title}
-                    </h3>
+                      >
+                        {project.title}
+                      </h3>
 
-                    <Link
-                      href={project.links.live}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      aria-label={`Visitar ${project.title}`}
-                      className="inline-flex items-center justify-center cursor-pointer shrink-0"
-                    >
-                      <ArrowUpRight
-                        aria-hidden="true"
-                        className="text-white size-6 sm:size-7 md:size-8 xl:size-9 transition-transform duration-300 hover:scale-110 hover:translate-x-1 hover:-translate-y-1"
-                      />
-                    </Link>
+                      <Link
+                        href={project.links.live}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={`Visitar ${project.title}`}
+                        className="inline-flex items-center justify-center cursor-pointer shrink-0"
+                      >
+                        <ArrowUpRight
+                          aria-hidden="true"
+                          className="text-white size-6 sm:size-7 md:size-8 xl:size-9 transition-transform duration-300 hover:scale-110 hover:translate-x-1 hover:-translate-y-1"
+                        />
+                      </Link>
+                    </div>
+
+                    <p className="text-white/70 text-xs sm:text-sm md:text-base xl:text-lg">
+                      {project.description}
+                    </p>
                   </div>
 
-                  <p className="text-white/70 text-xs sm:text-sm md:text-base xl:text-lg">
-                    {project.description}
-                  </p>
-                </div>
-
-                <div
-                  className="
+                  <div
+                    className="
                     w-full
                     p-4 pb-0
                     sm:p-6 sm:pb-0
@@ -238,32 +239,34 @@ export default function Projects() {
                     group-hover:translate-y-0
                     group-focus:translate-y-0
                   "
-                >
-                  <div className="rounded-t-lg md:rounded-t-xl lg:rounded-t-2xl overflow-hidden border border-white/30">
-                    <Image
-                      src="/images/projects/window-browser.avif"
-                      alt=""
-                      aria-hidden="true"
-                      width={1188}
-                      height={70}
-                      loading="lazy"
-                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 85vw, 75vw"
-                      className="w-full"
-                    />
+                  >
+                    <div className="rounded-t-lg md:rounded-t-xl lg:rounded-t-2xl overflow-hidden border border-white/30">
+                      <div className="aspect-[95040/54803]">
+                        <Image
+                          src="/images/projects/window-browser.avif"
+                          alt=""
+                          aria-hidden="true"
+                          width={2376}
+                          height={140}
+                          loading="lazy"
+                          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 85vw, 75vw"
+                          className="h-auto w-full"
+                        />
 
-                    <Image
-                      src={project.image}
-                      alt={`Vista previa de ${project.title}`}
-                      width={1920}
-                      height={171}
-                      loading="lazy"
-                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 85vw, 75vw"
-                      className="w-full"
-                    />
+                        <Image
+                          src={project.image}
+                          alt={`Vista previa de ${project.title}`}
+                          width={1920}
+                          height={994}
+                          loading="lazy"
+                          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 85vw, 75vw"
+                          className="h-auto w-full"
+                        />
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
             </article>
           </li>
         ))}
