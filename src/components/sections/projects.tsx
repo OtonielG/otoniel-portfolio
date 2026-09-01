@@ -54,8 +54,6 @@ export default function Projects() {
       let cancelled = false;
 
       const setupScrollTriggers = async () => {
-        await document.fonts.ready;
-
         const images = Array.from(
           sectionRef.current?.querySelectorAll("img") ?? [],
         );
