@@ -72,6 +72,16 @@ export default function Projects() {
           },
         });
       });
+
+      const refreshOnLoad = () => {
+        ScrollTrigger.refresh();
+      };
+
+      window.addEventListener("load", refreshOnLoad);
+
+      return () => {
+        window.removeEventListener("load", refreshOnLoad);
+      };
     },
     { scope: sectionRef },
   );
@@ -202,7 +212,7 @@ export default function Projects() {
                       aria-hidden="true"
                       width={1188}
                       height={70}
-                      loading="eager"
+                      loading="lazy"
                       sizes="(max-width: 640px) 100vw, (max-width: 1024px) 85vw, 75vw"
                       className="w-full"
                     />
@@ -212,7 +222,7 @@ export default function Projects() {
                       alt={`Vista previa de ${project.title}`}
                       width={1920}
                       height={171}
-                      loading="eager"
+                      loading="lazy"
                       sizes="(max-width: 640px) 100vw, (max-width: 1024px) 85vw, 75vw"
                       className="w-full"
                     />
