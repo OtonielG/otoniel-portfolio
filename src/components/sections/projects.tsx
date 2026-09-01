@@ -10,6 +10,9 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
+const CARD_SCALE = 0.7;
+const CARD_SCROLL_DISTANCE = 400;
+
 const projects = [
   {
     title: "Sitio Web Oficial del Ministerio Cristiano La Última Llamada",
@@ -51,66 +54,50 @@ export default function Projects() {
 
   useGSAP(
     () => {
-      // let cancelled = false;
+      if (!sectionRef.current) return;
 
-      const setupScrollTriggers = async () => {
-        // const images = Array.from(
-        //   sectionRef.current?.querySelectorAll("img") ?? [],
-        // );
+      const cards = gsap.utils.toArray<HTMLElement>(
+        sectionRef.current.querySelectorAll(".project-card"),
+      );
 
-        // await Promise.all(
-        //   images.map((img) =>
-        //     img.complete
-        //       ? Promise.resolve()
-        //       : img.decode().catch(() => undefined),
-        //   ),
-        // );
+      cards.forEach((card, index) => {
+        const isLastCard = index === cards.length - 1;
+        const trigger = card.parentElement?.querySelector<HTMLElement>(
+          ".project-card-trigger",
+        );
+        const cardVisual = card.querySelector<HTMLElement>(
+          ".project-card-visual",
+        );
 
-        // if (cancelled || !sectionRef.current) return;
+        if (!trigger || !cardVisual) return;
 
-        const cards = gsap.utils.toArray<HTMLElement>(".card-stack");
-
-        cards.forEach((card, index) => {
-          const isLastCard = index === cards.length - 1;
-          const cardVisual =
-            card.querySelector<HTMLElement>(".card-stack-visual");
-
-          if (!cardVisual) return;
-
-          gsap.to(cardVisual, {
-            scale: 0.7,
-            ease: "none",
-            scrollTrigger: {
-              trigger: card,
-              start: isLastCard ? "top 120px" : "top 80px",
-              end: "+=400",
-              scrub: 1,
-            },
-          });
-
-          if (isLastCard) {
-            const cardHeight = cardVisual.offsetHeight;
-
-            gsap.set(card, { height: cardHeight });
-            gsap.to(card, {
-              height: cardHeight * 0.7,
-              ease: "none",
-              scrollTrigger: {
-                trigger: card,
-                start: "top 120px",
-                end: "+=400",
-                scrub: 1,
-              },
-            });
-          }
+        const timeline = gsap.timeline({
+          defaults: { ease: "none" },
+          scrollTrigger: {
+            trigger,
+            start: isLastCard ? "top 120px" : "top 80px",
+            end: `+=${CARD_SCROLL_DISTANCE}`,
+            scrub: 1,
+            invalidateOnRefresh: true,
+          },
         });
-      };
 
-      setupScrollTriggers();
+        timeline.fromTo(
+          cardVisual,
+          { scale: 1 },
+          { scale: CARD_SCALE },
+          0,
+        );
 
-      // return () => {
-      //   cancelled = true;
-      // };
+        if (isLastCard) {
+          timeline.fromTo(
+            card,
+            { height: () => cardVisual.offsetHeight },
+            { height: () => cardVisual.offsetHeight * CARD_SCALE },
+            0,
+          );
+        }
+      });
     },
     { scope: sectionRef },
   );
@@ -124,28 +111,34 @@ export default function Projects() {
       <h2 className="font-technor text-display text-3xl sm:text-4xl md:text-5xl xl:text-6xl text-center mb-6 md:mb-10">
         Mis Proyectos
       </h2>
-      <ul className="w-full flex flex-col gap-8 md:gap-10 lg:gap-12 items-center">
-        {projects.map((project) => (
-          <li
-            key={project.title}
-            tabIndex={0}
-            className="
-              card-stack
-              group sm:w-[90%] md:w-[85%] lg:w-[80%] xl:w-[75%] 2xl:w-[70%] outline-none
-            "
-          >
+      <ul className="w-full flex flex-col items-center">
+        {projects.map((project, index) => (
+          <li key={project.title} className="contents">
+            <span
+              aria-hidden="true"
+              className={`project-card-trigger h-0 w-full ${
+                index === 0 ? "" : "mt-8 md:mt-10 lg:mt-12"
+              }`}
+            />
             <article
+              tabIndex={0}
               className="
-              card-stack-visual
-              relative w-full origin-top bg-card/50 p-2 sm:p-3 border border-white/5 rounded-4xl overflow-hidden will-change-transform
-
-              before:absolute before:top-0 before:left-0 before:h-px before:w-full
-              before:bg-[linear-gradient(to_right,transparent_0%,transparent_10%,rgba(255,255,255,0.75)_40%,rgba(255,255,255,0.75)_60%,transparent_90%,transparent_100%)]
-              before:pointer-events-none
+              project-card sticky top-20
+              group sm:w-[90%] md:w-[85%] lg:w-[80%] xl:w-[75%] 2xl:w-[70%] outline-none
             "
             >
               <div
                 className="
+                project-card-visual
+                relative w-full origin-top bg-card/50 p-2 sm:p-3 border border-white/5 rounded-4xl overflow-hidden will-change-transform
+
+                before:absolute before:top-0 before:left-0 before:h-px before:w-full
+                before:bg-[linear-gradient(to_right,transparent_0%,transparent_10%,rgba(255,255,255,0.75)_40%,rgba(255,255,255,0.75)_60%,transparent_90%,transparent_100%)]
+                before:pointer-events-none
+              "
+              >
+                <div
+                  className="
                 relative bg-card w-full flex flex-col gap-5
 
                 p-6 pb-0
@@ -164,21 +157,21 @@ export default function Projects() {
                 after:bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.08),transparent_65%)]
                 after:pointer-events-none
               "
-              >
-                <div
-                  style={
-                    {
-                      "--glow-color": project.glowColor,
-                    } as React.CSSProperties
-                  }
-                  className="
+                >
+                  <div
+                    style={
+                      {
+                        "--glow-color": project.glowColor,
+                      } as React.CSSProperties
+                    }
+                    className="
                   pointer-events-none absolute top-0 left-1/2 -translate-x-1/2
                   w-full h-full
                   bg-[radial-gradient(circle_at_top,var(--glow-color)_0%,transparent_98%)]
                   opacity-0 transition-opacity duration-500
                   group-hover:opacity-20 group-focus:opacity-20
                 "
-                />
+                  />
                 <div className="flex flex-col gap-2">
                   <div
                     className="
@@ -265,6 +258,7 @@ export default function Projects() {
                       </div>
                     </div>
                   </div>
+                </div>
                 </div>
               </div>
             </article>

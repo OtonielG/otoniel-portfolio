@@ -40,10 +40,3 @@ body {
   font-family: var(--font-zodiak), serif;
   font-weight: 400;
 }
-
-.card-stack {
-  position: sticky;
-  top: 80px;
-  transform-origin: top center;
-  will-change: transform;
-}
