@@ -6,7 +6,7 @@ export default function Skills() {
       </h2>
 
       <div className="w-[95%] sm:w-[85%] md:w-[80%] lg:w-[70%] xl:w-[65%] 2xl:w-[55%]">
-        <ul className="skill-container w-full flex gap-5 overflow-visible">
+        <ul className="skill-container w-full flex gap-3 sm:gap-5 overflow-visible">
           <li className="skill-card min-w-0 flex-1 aspect-[3/4] bg-red-100"></li>
           <li className="skill-card min-w-0 flex-1 aspect-[3/4] bg-blue-100"></li>
           <li className="skill-card min-w-0 flex-1 aspect-[3/4] bg-green-100"></li>
