@@ -51,42 +51,47 @@ export default function Projects() {
 
   useGSAP(
     () => {
-      if (!sectionRef.current) return;
+      let cancelled = false;
 
-      const cards = gsap.utils.toArray<HTMLElement>(
-        ".card-stack",
-        sectionRef.current,
-      );
+      const setupScrollTriggers = async () => {
+        await document.fonts.ready;
 
-      cards.forEach((card, index) => {
-        const isLastCard = index === cards.length - 1;
+        const images = Array.from(
+          sectionRef.current?.querySelectorAll("img") ?? [],
+        );
 
-        gsap.to(card, {
-          scale: 0.7,
-          ease: "none",
-          scrollTrigger: {
-            trigger: card,
-            start: isLastCard ? "top 120px" : "top 80px",
-            end: "+=400",
-            scrub: 1,
-          },
-        });
-      });
+        await Promise.all(
+          images.map((img) =>
+            img.complete
+              ? Promise.resolve()
+              : img.decode().catch(() => undefined),
+          ),
+        );
 
-      const refreshOnLoad = () => {
-        requestAnimationFrame(() => {
-          ScrollTrigger.refresh();
+        if (cancelled || !sectionRef.current) return;
+
+        const cards = gsap.utils.toArray<HTMLElement>(".card-stack");
+
+        cards.forEach((card, index) => {
+          const isLastCard = index === cards.length - 1;
+
+          gsap.to(card, {
+            scale: 0.7,
+            ease: "none",
+            scrollTrigger: {
+              trigger: card,
+              start: isLastCard ? "top 120px" : "top 80px",
+              end: "+=400",
+              scrub: 1,
+            },
+          });
         });
       };
 
-      if (document.readyState === "complete") {
-        refreshOnLoad();
-      } else {
-        window.addEventListener("load", refreshOnLoad);
-      }
+      setupScrollTriggers();
 
       return () => {
-        window.removeEventListener("load", refreshOnLoad);
+        cancelled = true;
       };
     },
     { scope: sectionRef },
