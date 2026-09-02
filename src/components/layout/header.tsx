@@ -133,37 +133,43 @@ export default function Navbar() {
           ))}
         </div>
 
-        <Link
-          href="#contacto"
-          className="
-            shrink-0
-            whitespace-nowrap
-            rounded-full
-            bg-primary/70
-            px-4 py-2
-            text-sm md:text-base font-semibold
-            text-white
-            transition-all
+        <div className="flex shrink-0 items-center gap-3 whitespace-nowrap">
+          <span className="text-sm sm:text-base font-bold text-display hover:text-muted hover:scale-105 transition-all duration-300 cursor-pointer">
+            EN
+          </span>
 
-            hover:-translate-y-0.5
-            hover:bg-primary-hover/80
-            hover:shadow-[0_6px_20px_rgba(59,163,79,0.15)]
+          <Link
+            href="#contacto"
+            className="
+      shrink-0
+      whitespace-nowrap
+      rounded-full
+      bg-primary/70
+      px-4 py-2
+      text-sm md:text-base font-semibold
+      text-white
+      transition-all
 
-            focus-visible:outline-none
-            focus-visible:ring-2
-            focus-visible:ring-primary
-            focus-visible:ring-offset-2
-            focus-visible:ring-offset-background
+      hover:-translate-y-0.5
+      hover:bg-primary-hover/80
+      hover:shadow-[0_6px_20px_rgba(59,163,79,0.15)]
 
-            md:px-4
-            md:py-2
+      focus-visible:outline-none
+      focus-visible:ring-2
+      focus-visible:ring-primary
+      focus-visible:ring-offset-2
+      focus-visible:ring-offset-background
 
-            lg:px-5
-            lg:py-2.5
-          "
-        >
-          Contáctame
-        </Link>
+      md:px-4
+      md:py-2
+
+      lg:px-5
+      lg:py-2.5
+    "
+          >
+            Contáctame
+          </Link>
+        </div>
       </nav>
     </header>
   );

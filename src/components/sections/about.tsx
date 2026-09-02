@@ -340,7 +340,7 @@ export default function About() {
       <p className="px-3 max-w-[480px] sm:max-w-[550px] md:max-w-[730px] text-center text-muted/80 text-sm sm:text-base md:text-lg">
         Soy Otoniel Gómez, frontend developer de{" "}
         <strong className="text-muted">Guatemala</strong>. En el código suelo
-        trabajar con <strong className="text-muted">React</strong> y{" "}
+        trabajar con <strong className="text-muted">TypeScript</strong> y{" "}
         <strong className="text-muted">Next.js</strong>; para comunicarme, uso{" "}
         <strong className="text-muted">español</strong>,{" "}
         <strong className="text-muted">inglés</strong> y{" "}
