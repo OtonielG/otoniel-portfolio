@@ -38,7 +38,7 @@ const skillGroups: { title: string; skills: Skill[] }[] = [
     ],
   },
   {
-    title: "Libraries",
+    title: "Librerías",
     skills: [
       { name: "GSAP", Icon: GsapIcon },
       { name: "Redux", Icon: ReduxIcon },
@@ -46,7 +46,7 @@ const skillGroups: { title: string; skills: Skill[] }[] = [
     ],
   },
   {
-    title: "Development",
+    title: "Herramientas",
     skills: [
       { name: "Git", Icon: GitIcon },
       { name: "GitHub", Icon: GithubIcon },
