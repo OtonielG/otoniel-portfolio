@@ -82,7 +82,7 @@ export default function Skills() {
                 flex flex-col gap-4 p-4
               "
             >
-              <h3 className="font-technor text-foreground text-center text-base sm:text-lg md:text-xl">
+              <h3 className="font-technor text-foreground/90 text-center text-base sm:text-lg md:text-xl">
                 {group.title}
               </h3>
 

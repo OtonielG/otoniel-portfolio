@@ -68,10 +68,28 @@ body {
 }
 
 .skill-container {
-  animation: containerMove linear both;
+  animation: mobileContainerMovePerspective linear both;
   animation-timeline: --skills-section;
   animation-range: entry 10% exit 90%;
+  transform-style: preserve-3d;
   will-change: transform;
+}
+
+@keyframes mobileContainerMovePerspective {
+  0% {
+    transform: perspective(550px) translateX(20%) translate3d(0, 28px, 0)
+      rotateY(-24deg);
+  }
+
+  50% {
+    transform: perspective(550px) translateX(0) translate3d(0, 0, 0)
+      rotateY(0deg);
+  }
+
+  100% {
+    transform: perspective(550px) translateX(-20%) translate3d(0, 28px, 0)
+      rotateY(24deg);
+  }
 }
 
 @keyframes containerMove {
@@ -89,12 +107,21 @@ body {
 }
 
 .skill-card {
-  animation: cardPerspective linear both;
-  animation-timeline: --skills-section;
-  animation-range: entry 10% exit 90%;
   backface-visibility: hidden;
   transform-style: preserve-3d;
   will-change: transform;
+}
+
+@media (min-width: 48rem) {
+  .skill-container {
+    animation-name: containerMove;
+  }
+
+  .skill-card {
+    animation: cardPerspective linear both;
+    animation-timeline: --skills-section;
+    animation-range: entry 10% exit 90%;
+  }
 }
 
 @keyframes cardPerspective {
