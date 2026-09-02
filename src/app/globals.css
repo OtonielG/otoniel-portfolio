@@ -67,31 +67,6 @@ body {
   view-timeline: --skills-section block;
 }
 
-.skill-container {
-  animation: mobileContainerMovePerspective linear both;
-  animation-timeline: --skills-section;
-  animation-range: entry 10% exit 90%;
-  transform-style: preserve-3d;
-  will-change: transform;
-}
-
-@keyframes mobileContainerMovePerspective {
-  0% {
-    transform: perspective(550px) translateX(20%) translate3d(0, 28px, 0)
-      rotateY(-24deg);
-  }
-
-  50% {
-    transform: perspective(550px) translateX(0) translate3d(0, 0, 0)
-      rotateY(0deg);
-  }
-
-  100% {
-    transform: perspective(550px) translateX(-20%) translate3d(0, 28px, 0)
-      rotateY(24deg);
-  }
-}
-
 @keyframes containerMove {
   0% {
     transform: translateX(20%);
@@ -107,14 +82,38 @@ body {
 }
 
 .skill-card {
+  --skill-card-start-x: -100%;
+
+  view-timeline: --skill-card block;
+  animation: mobileSkillCardEnter linear both;
+  animation-timeline: --skill-card;
+  animation-range: entry 5% entry 110%;
   backface-visibility: hidden;
   transform-style: preserve-3d;
   will-change: transform;
 }
 
+.skill-card:nth-child(even) {
+  --skill-card-start-x: 100%;
+}
+
+@keyframes mobileSkillCardEnter {
+  from {
+    transform: translateX(var(--skill-card-start-x));
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
 @media (min-width: 48rem) {
   .skill-container {
-    animation-name: containerMove;
+    animation: containerMove linear both;
+    animation-timeline: --skills-section;
+    animation-range: entry 10% exit 90%;
+    transform-style: preserve-3d;
+    will-change: transform;
   }
 
   .skill-card {
