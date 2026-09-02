@@ -4,7 +4,6 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Scrollbar */
 html {
   scrollbar-color: var(--color-display) transparent;
   scrollbar-width: auto;
