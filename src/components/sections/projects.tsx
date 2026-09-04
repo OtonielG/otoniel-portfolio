@@ -28,22 +28,22 @@ const projects = [
   {
     title: "Buscaminas Interactivo con Gestión Compleja de Estado Global",
     description:
-      "Juego interactivo desarrollado con React y TypeScript, con lógica avanzada, gestión de estado global, generación dinámica del tablero y una arquitectura sólida, mantenible y escalable.",
-    image: "/images/projects/la-ultima-llamada-img.avif",
+      "Juego interactivo desarrollado con React, TypeScript y Tailwind CSS. Implementa Context y useReducer para gestionar la lógica del juego y conserva el progreso del usuario mediante localStorage.",
+    image: "/images/projects/minesweeper-img.avif",
 
     links: {
-      live: "https://www.laultimallamada.org/",
+      live: "https://minesweeper-ts-topaz.vercel.app/",
     },
     glowColor: "#32d9ff",
   },
   {
-    title: "Plataforma Interactiva para Gestión y Visualización de Datos",
+    title: "TaskSpace — Gestor de Tareas con Drag and Drop",
     description:
-      "Plataforma web desarrollada con React y TypeScript para gestionar y visualizar datos, con componentes reutilizables, filtros dinámicos y una arquitectura limpia, mantenible y escalable.",
-    image: "/images/projects/la-ultima-llamada-img.avif",
+      "Gestor de tareas en columnas desarrollado con React, TypeScript y Tailwind CSS, con búsqueda, edición en línea, drag and drop y persistencia de datos en localStorage.",
+    image: "/images/projects/task-space-img.avif",
 
     links: {
-      live: "https://www.laultimallamada.org/",
+      live: "https://task-manager-dnd.vercel.app/",
     },
     glowColor: "#b86cff",
   },
@@ -82,12 +82,7 @@ export default function Projects() {
           },
         });
 
-        timeline.fromTo(
-          cardVisual,
-          { scale: 1 },
-          { scale: CARD_SCALE },
-          0,
-        );
+        timeline.fromTo(cardVisual, { scale: 1 }, { scale: CARD_SCALE }, 0);
 
         if (isLastCard) {
           timeline.fromTo(
@@ -172,9 +167,9 @@ export default function Projects() {
                   group-hover:opacity-20 group-focus:opacity-20
                 "
                   />
-                <div className="flex flex-col gap-2">
-                  <div
-                    className="
+                  <div className="flex flex-col gap-2">
+                    <div
+                      className="
                     flex flex-col gap-2
                     min-h-[170px]
 
@@ -189,38 +184,38 @@ export default function Projects() {
                     xl:min-h-[135px]
                     2xl:min-h-[120px]
                   "
-                  >
-                    <div className="flex justify-between gap-5">
-                      <h3
-                        className="
+                    >
+                      <div className="flex justify-between gap-5">
+                        <h3
+                          className="
                         text-white font-zodiak text-base sm:text-lg md:text-xl xl:text-2xl
                         [text-shadow:0_0_14px_rgba(255,255,255,0.18)]
                       "
-                      >
-                        {project.title}
-                      </h3>
+                        >
+                          {project.title}
+                        </h3>
 
-                      <Link
-                        href={project.links.live}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label={`Visitar ${project.title}`}
-                        className="inline-flex items-center justify-center cursor-pointer shrink-0"
-                      >
-                        <ArrowUpRight
-                          aria-hidden="true"
-                          className="text-white size-6 sm:size-7 md:size-8 xl:size-9 transition-transform duration-300 hover:scale-110 hover:translate-x-1 hover:-translate-y-1"
-                        />
-                      </Link>
+                        <Link
+                          href={project.links.live}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label={`Visitar ${project.title}`}
+                          className="inline-flex items-center justify-center cursor-pointer shrink-0"
+                        >
+                          <ArrowUpRight
+                            aria-hidden="true"
+                            className="text-white size-6 sm:size-7 md:size-8 xl:size-9 transition-transform duration-300 hover:scale-110 hover:translate-x-1 hover:-translate-y-1"
+                          />
+                        </Link>
+                      </div>
+
+                      <p className="text-white/70 text-xs sm:text-sm md:text-base xl:text-lg">
+                        {project.description}
+                      </p>
                     </div>
 
-                    <p className="text-white/70 text-xs sm:text-sm md:text-base xl:text-lg">
-                      {project.description}
-                    </p>
-                  </div>
-
-                  <div
-                    className="
+                    <div
+                      className="
                     w-full
                     p-4 pb-0
                     sm:p-6 sm:pb-0
@@ -232,33 +227,33 @@ export default function Projects() {
                     group-hover:translate-y-0
                     group-focus:translate-y-0
                   "
-                  >
-                    <div className="rounded-t-lg md:rounded-t-xl lg:rounded-t-2xl overflow-hidden border border-white/30">
-                      <div className="aspect-[95040/54803]">
-                        <Image
-                          src="/images/projects/window-browser.avif"
-                          alt=""
-                          aria-hidden="true"
-                          width={2376}
-                          height={140}
-                          loading="lazy"
-                          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 85vw, 75vw"
-                          className="h-auto w-full"
-                        />
+                    >
+                      <div className="rounded-t-lg md:rounded-t-xl lg:rounded-t-2xl overflow-hidden border border-white/30">
+                        <div className="aspect-[95040/54803]">
+                          <Image
+                            src="/images/projects/window-browser.avif"
+                            alt=""
+                            aria-hidden="true"
+                            width={2376}
+                            height={140}
+                            loading="lazy"
+                            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 85vw, 75vw"
+                            className="h-auto w-full"
+                          />
 
-                        <Image
-                          src={project.image}
-                          alt={`Vista previa de ${project.title}`}
-                          width={1920}
-                          height={994}
-                          loading="lazy"
-                          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 85vw, 75vw"
-                          className="h-auto w-full"
-                        />
+                          <Image
+                            src={project.image}
+                            alt={`Vista previa de ${project.title}`}
+                            width={1920}
+                            height={994}
+                            loading="lazy"
+                            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 85vw, 75vw"
+                            className="h-auto w-full"
+                          />
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
                 </div>
               </div>
             </article>
