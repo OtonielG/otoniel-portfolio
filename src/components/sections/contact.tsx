@@ -59,6 +59,10 @@ export default function Contact() {
         </ul>
       </div>
       <form
+        onSubmit={(e) => {
+          e.preventDefault();
+          e.currentTarget.reset();
+        }}
         className="
           w-full md:w-[90%] lg:w-[45%] 2xl:w-[40%]
           flex flex-col justify-center gap-4
@@ -129,7 +133,7 @@ export default function Contact() {
 
           <textarea
             id="message"
-            defaultValue="Hola, me gustaría hablar contigo sobre "
+            placeholder="Hola, me gustaría hablar contigo sobre..."
             className="
               min-h-36 w-full resize-none rounded-md
               border border-white/20
@@ -146,7 +150,7 @@ export default function Contact() {
         </div>
 
         <button
-          type="button"
+          type="submit"
           className="
             w-full lg:w-auto
             mt-2 self-start rounded-md
