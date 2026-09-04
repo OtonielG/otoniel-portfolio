@@ -134,9 +134,9 @@ export default function Navbar() {
         </div>
 
         <div className="flex shrink-0 items-center gap-3 whitespace-nowrap">
-          <span className="text-sm sm:text-base font-bold text-display hover:text-muted hover:scale-105 transition-all duration-300 cursor-pointer">
+          {/* <span className="text-sm sm:text-base font-bold text-display hover:text-muted hover:scale-105 transition-all duration-300 cursor-pointer">
             EN
-          </span>
+          </span> */}
 
           <Link
             href="#contacto"

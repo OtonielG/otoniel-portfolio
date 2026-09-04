@@ -148,9 +148,10 @@ export default function Contact() {
         <button
           type="button"
           className="
+            w-full lg:w-auto
             mt-2 self-start rounded-md
             bg-primary
-            px-5 py-3
+            lg:px-5 py-3
             text-sm font-semibold
             text-background
             transition-opacity
