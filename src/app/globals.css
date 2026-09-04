@@ -82,29 +82,9 @@ body {
 }
 
 .skill-card {
-  --skill-card-start-x: -100%;
-
-  view-timeline: --skill-card block;
-  animation: mobileSkillCardEnter linear both;
-  animation-timeline: --skill-card;
-  animation-range: entry 5% entry 110%;
   backface-visibility: hidden;
   transform-style: preserve-3d;
   will-change: transform;
-}
-
-.skill-card:nth-child(even) {
-  --skill-card-start-x: 100%;
-}
-
-@keyframes mobileSkillCardEnter {
-  from {
-    transform: translateX(var(--skill-card-start-x));
-  }
-
-  to {
-    transform: translateX(0);
-  }
 }
 
 @media (min-width: 48rem) {

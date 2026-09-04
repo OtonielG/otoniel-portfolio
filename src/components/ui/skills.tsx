@@ -18,6 +18,7 @@ import {
   VercelIcon,
   CursorIcon,
 } from "@/components/icons";
+import SkillCardsMotion from "@/components/ui/skill-cards-motion";
 
 type Skill = {
   name: string;
@@ -61,7 +62,10 @@ const skillGroups: { title: string; skills: Skill[] }[] = [
 
 export default function Skills() {
   return (
-    <section className="skills-section w-full overflow-x-clip flex flex-col items-center justify-center gap-5 py-6 md:py-8 md:scroll-mt-7 lg:scroll-mt-8">
+    <section
+      data-skills-section
+      className="skills-section w-full overflow-x-clip flex flex-col items-center justify-center gap-5 py-6 md:py-8 md:scroll-mt-7 lg:scroll-mt-8"
+    >
       <h2 className="font-technor text-display text-3xl sm:text-4xl md:text-5xl xl:text-6xl text-center md:mb-6">
         Habilidades
       </h2>
@@ -99,7 +103,7 @@ export default function Skills() {
                       p-3 text-center
                     "
                   >
-                    <Icon className="h-7 w-7 sm:h-8 sm:w-8 text-primary/70" />
+                    <Icon className="h-7 w-7 sm:h-8 sm:w-8 text-primary/50" />
 
                     <span className="font-zodiak text-[0.72rem] leading-tight text-foreground/80 sm:text-xs">
                       {name}
@@ -111,6 +115,8 @@ export default function Skills() {
           ))}
         </ul>
       </div>
+
+      <SkillCardsMotion />
     </section>
   );
 }
