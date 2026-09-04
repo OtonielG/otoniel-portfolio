@@ -141,31 +141,31 @@ export default function Navbar() {
           <Link
             href="#contacto"
             className="
-      shrink-0
-      whitespace-nowrap
-      rounded-full
-      bg-primary/70
-      px-4 py-2
-      text-sm md:text-base font-semibold
-      text-white
-      transition-all
+              shrink-0
+              whitespace-nowrap
+              rounded-full
+              bg-primary/70
+              px-4 py-2
+              text-sm md:text-base font-semibold
+              text-white
+              transition-all
 
-      hover:-translate-y-0.5
-      hover:bg-primary-hover/80
-      hover:shadow-[0_6px_20px_rgba(59,163,79,0.15)]
+              hover:-translate-y-0.5
+              hover:bg-primary-hover/80
+              hover:shadow-[0_6px_20px_rgba(59,163,79,0.15)]
 
-      focus-visible:outline-none
-      focus-visible:ring-2
-      focus-visible:ring-primary
-      focus-visible:ring-offset-2
-      focus-visible:ring-offset-background
+              focus-visible:outline-none
+              focus-visible:ring-2
+              focus-visible:ring-primary
+              focus-visible:ring-offset-2
+              focus-visible:ring-offset-background
 
-      md:px-4
-      md:py-2
+              md:px-4
+              md:py-2
 
-      lg:px-5
-      lg:py-2.5
-    "
+              lg:px-5
+              lg:py-2.5
+            "
           >
             Contáctame
           </Link>
