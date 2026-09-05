@@ -26,7 +26,7 @@ export default function Contact() {
       id="contacto"
       className="w-full flex flex-col lg:flex-row md:items-center lg:justify-center px-4 py-6 md:py-8 md:scroll-mt-7 lg:scroll-mt-8"
     >
-      <div className="w-full lg:w-[45%] 2xl:w-[40%] flex flex-col gap-5 px-8 py-4 sm:py-5 md:py-6 lg:py-7 xl:py-8">
+      <div className="w-full lg:w-[45%] 2xl:w-[40%] flex flex-col items-center lg:items-start gap-5 px-8 py-4 sm:py-5 md:py-6 lg:py-7 xl:py-8">
         <h2 className="font-technor text-display text-3xl sm:text-4xl md:text-5xl xl:text-6xl text-center lg:text-start">
           Contacto
         </h2>
@@ -42,7 +42,7 @@ export default function Contact() {
           Si quieres hablar conmigo sobre una oportunidad, proyecto o
           colaboración, puedes enviarme un mensaje y te responderé pronto.
         </p>
-        <ul className="flex justify-center flex-wrap lg:justify-start lg:flex-col gap-4">
+        <ul className="flex flex-col sm:flex-row justify-center flex-wrap lg:justify-start lg:flex-col gap-4">
           {contactInfo.map((info, index) => (
             <li key={index} className="flex items-center gap-3">
               <div className="bg-primary/10 p-2 border border-white/20 rounded-full">
