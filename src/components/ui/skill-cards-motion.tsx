@@ -11,6 +11,7 @@ export default function SkillCardsMotion() {
     const section = document.querySelector<HTMLElement>(
       "[data-skills-section]",
     );
+
     if (!section) return;
 
     ScrollTrigger.config({ ignoreMobileResize: true });
@@ -25,16 +26,19 @@ export default function SkillCardsMotion() {
       cards.forEach((card, index) => {
         gsap.fromTo(
           card,
-          { xPercent: index % 2 === 0 ? -100 : 100 },
+          {
+            xPercent: index % 2 === 0 ? -100 : 100,
+            opacity: 0,
+          },
           {
             xPercent: 0,
-            ease: "none",
+            opacity: 1,
+            duration: 0.9,
+            ease: "power2.out",
             scrollTrigger: {
               trigger: card,
-              start: "top 95%",
-              end: () => `+=${card.offsetHeight * 1.05}`,
-              scrub: 1,
-              invalidateOnRefresh: true,
+              start: "center bottom",
+              toggleActions: "play none none reverse",
             },
           },
         );
