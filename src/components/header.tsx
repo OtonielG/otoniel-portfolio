@@ -144,7 +144,7 @@ export default function Navbar({ dictionary, lang }: NavbarProps) {
           </Link>
 
           <Link
-            href="contact"
+            href="#contact"
             className="
               shrink-0
               whitespace-nowrap
