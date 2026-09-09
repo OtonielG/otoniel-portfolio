@@ -25,9 +25,17 @@ type Skill = {
   Icon: ComponentType<SVGProps<SVGSVGElement>>;
 };
 
-const skillGroups: { title: string; skills: Skill[] }[] = [
+type SkillsProps = {
+  dictionary: {
+    title: string;
+    groups: {
+      title: string;
+    }[];
+  };
+};
+
+const skillGroups: { skills: Skill[] }[] = [
   {
-    title: "Frontend",
     skills: [
       { name: "HTML", Icon: HtmlIcon },
       { name: "CSS", Icon: CssIcon },
@@ -39,7 +47,6 @@ const skillGroups: { title: string; skills: Skill[] }[] = [
     ],
   },
   {
-    title: "Librerías",
     skills: [
       { name: "GSAP", Icon: GsapIcon },
       { name: "Redux", Icon: ReduxIcon },
@@ -47,7 +54,6 @@ const skillGroups: { title: string; skills: Skill[] }[] = [
     ],
   },
   {
-    title: "Herramientas",
     skills: [
       { name: "Git", Icon: GitIcon },
       { name: "GitHub", Icon: GithubIcon },
@@ -60,21 +66,21 @@ const skillGroups: { title: string; skills: Skill[] }[] = [
   },
 ];
 
-export default function Skills() {
+export default function Skills({ dictionary }: SkillsProps) {
   return (
     <section
       data-skills-section
       className="skills-section w-full overflow-x-clip flex flex-col items-center justify-center gap-5 py-6 md:py-8 md:scroll-mt-7 lg:scroll-mt-8"
     >
       <h2 className="font-technor text-display text-3xl sm:text-4xl md:text-5xl xl:text-6xl text-center md:mb-6">
-        Habilidades
+        {dictionary.title}
       </h2>
 
       <div className="w-[90%] sm:w-[80%] md:w-[95%] lg:w-[86%] xl:w-[75%] 2xl:w-[60%]">
         <ul className="skill-container w-full flex flex-wrap md:flex-nowrap gap-3 sm:gap-4 overflow-visible">
-          {skillGroups.map((group) => (
+          {skillGroups.map((group, index) => (
             <li
-              key={group.title}
+              key={dictionary.groups[index].title}
               className="
                 skill-card min-w-0 grow
                 basis-full
@@ -87,7 +93,7 @@ export default function Skills() {
               "
             >
               <h3 className="font-technor text-foreground/90 text-center text-base sm:text-lg md:text-xl">
-                {group.title}
+                {dictionary.groups[index].title}
               </h3>
 
               <ul className="flex flex-1 flex-wrap content-start gap-2">

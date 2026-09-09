@@ -71,5 +71,19 @@
         "glowColor": "#b86cff"
       }
     ]
+  },
+  "skills": {
+    "title": "Habilidades",
+    "groups": [
+      {
+        "title": "Frontend"
+      },
+      {
+        "title": "Librerías"
+      },
+      {
+        "title": "Herramientas de desarrollo"
+      }
+    ]
   }
 }

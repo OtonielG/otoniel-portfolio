@@ -71,5 +71,19 @@
         "glowColor": "#b86cff"
       }
     ]
+  },
+  "skills": {
+    "title": "Skills",
+    "groups": [
+      {
+        "title": "Frontend"
+      },
+      {
+        "title": "Libraries"
+      },
+      {
+        "title": "Development Tools"
+      }
+    ]
   }
 }
