@@ -8,7 +8,7 @@ const navigationLinks = [
   },
   {
     label: "Sobre mí",
-    href: "#sobre-mi",
+    href: "#about",
   },
   {
     label: "Proyectos",

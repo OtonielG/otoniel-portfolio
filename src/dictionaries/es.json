@@ -1,0 +1,20 @@
+{
+  "about": {
+    "title": "Sobre Mí",
+    "cvButton": "Descargar CV",
+    "cvFile": "/cv/CV_Otoniel_Gomez_ES.pdf",
+    "cvDownloadName": "CV_Otoniel_Gomez_ES.pdf",
+    "description": {
+      "intro": "Soy Otoniel Gómez, frontend developer de",
+      "country": "Guatemala",
+      "workIntro": "En el código suelo trabajar con",
+      "and": "y",
+      "communicationIntro": "para comunicarme, uso",
+      "spanish": "español",
+      "english": "inglés",
+      "portuguese": "portugués",
+      "mindset": "Me gusta entender cómo funcionan las cosas por dentro, no solo hacer que se vean bien en pantalla.",
+      "personal": "Fuera del código, los videojuegos y mis perritas suelen estar cerca."
+    }
+  }
+}

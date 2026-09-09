@@ -30,7 +30,28 @@ const socialLinks = [
   },
 ];
 
-export default function About() {
+type AboutProps = {
+  dictionary: {
+    title: string;
+    cvButton: string;
+    cvFile: string;
+    cvDownloadName: string;
+    description: {
+      intro: string;
+      country: string;
+      workIntro: string;
+      and: string;
+      communicationIntro: string;
+      spanish: string;
+      english: string;
+      portuguese: string;
+      mindset: string;
+      personal: string;
+    };
+  };
+};
+
+export default function About({ dictionary }: AboutProps) {
   const sectionRef = useRef<HTMLElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
 
@@ -198,12 +219,12 @@ export default function About() {
 
   return (
     <section
-      id="sobre-mi"
+      id="about"
       ref={sectionRef}
       className="w-full flex flex-col items-center justify-center gap-5 px-4 py-6 md:py-8 md:scroll-mt-7 lg:scroll-mt-8"
     >
       <h2 className="font-technor text-display text-3xl sm:text-4xl md:text-5xl xl:text-6xl text-center">
-        Sobre Mí
+        {dictionary.title}
       </h2>
       <div
         ref={containerRef}
@@ -324,8 +345,8 @@ export default function About() {
           </a>
         ))}
         <a
-          href="/cv/CV_Otoniel_Gomez.pdf"
-          download="CV_Otoniel_Gomez.pdf"
+          href={dictionary.cvFile}
+          download={dictionary.cvDownloadName}
           className="group relative overflow-hidden bg-display font-semibold px-3 py-1 md:px-4 md:py-2 rounded-full inline-block
           hover:scale-107 transition-transform duration-300
           "
@@ -333,21 +354,26 @@ export default function About() {
           <span className="absolute inset-0 bg-foreground/70 -translate-x-[101%] group-hover:translate-x-0 transition-transform duration-500 ease-out" />
 
           <span className="relative text-sm md:text-base z-10 text-foreground/70 group-hover:text-display transition-colors duration-500">
-            Descargar CV
+            {dictionary.cvButton}
           </span>
         </a>
       </div>
       <p className="px-3 max-w-[480px] sm:max-w-[550px] md:max-w-[730px] text-center text-muted/80 text-sm sm:text-base md:text-lg">
-        Soy Otoniel Gómez, frontend developer de{" "}
-        <strong className="text-muted">Guatemala</strong>. En el código suelo
-        trabajar con <strong className="text-muted">TypeScript</strong> y{" "}
-        <strong className="text-muted">Next.js</strong>; para comunicarme, uso{" "}
-        <strong className="text-muted">español</strong>,{" "}
-        <strong className="text-muted">inglés</strong> y{" "}
-        <strong className="text-muted">portugués</strong>. Me gusta entender
-        cómo funcionan las cosas por dentro, no solo hacer que se vean bien en
-        pantalla. Fuera del código, los videojuegos y mis perritas suelen estar
-        cerca.
+        {dictionary.description.intro}{" "}
+        <strong className="text-muted">{dictionary.description.country}</strong>
+        . {dictionary.description.workIntro}{" "}
+        <strong className="text-muted">TypeScript</strong>{" "}
+        {dictionary.description.and}{" "}
+        <strong className="text-muted">Next.js</strong>;{" "}
+        {dictionary.description.communicationIntro}{" "}
+        <strong className="text-muted">{dictionary.description.spanish}</strong>
+        ,{" "}
+        <strong className="text-muted">{dictionary.description.english}</strong>{" "}
+        {dictionary.description.and}{" "}
+        <strong className="text-muted">
+          {dictionary.description.portuguese}
+        </strong>
+        . {dictionary.description.mindset} {dictionary.description.personal}
       </p>
     </section>
   );
