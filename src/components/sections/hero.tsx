@@ -68,7 +68,7 @@ export default function Hero() {
 
   return (
     <section
-      id="inicio"
+      id="home"
       ref={sectionRef}
       className="relative flex w-full items-end justify-center overflow-hidden bg-surface px-4 pt-[70px] md:h-svh"
     >

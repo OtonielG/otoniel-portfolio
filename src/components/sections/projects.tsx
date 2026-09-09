@@ -13,43 +13,25 @@ gsap.registerPlugin(useGSAP, ScrollTrigger);
 const CARD_SCALE = 0.7;
 const CARD_SCROLL_DISTANCE = 400;
 
-const projects = [
-  {
-    title: "Sitio Web Oficial del Ministerio Cristiano La Última Llamada",
-    description:
-      "Sitio web desarrollado desde cero con enfoque en diseño responsivo, rendimiento y SEO técnico, aplicando buenas prácticas de accesibilidad, semántica y optimización para producción web.",
-    image: "/images/projects/la-ultima-llamada-img.avif",
+type ProjectsProps = {
+  dictionary: {
+    id: string;
+    title: string;
+    visitAriaLabel: string;
+    previewAlt: string;
+    items: {
+      title: string;
+      description: string;
+      image: string;
+      links: {
+        live: string;
+      };
+      glowColor: string;
+    }[];
+  };
+};
 
-    links: {
-      live: "https://www.laultimallamada.org/",
-    },
-    glowColor: "#39ff88",
-  },
-  {
-    title: "Buscaminas Interactivo con Gestión Compleja de Estado Global",
-    description:
-      "Juego interactivo desarrollado con React, TypeScript y Tailwind CSS. Implementa Context y useReducer para gestionar la lógica del juego y conserva el progreso del usuario mediante localStorage.",
-    image: "/images/projects/minesweeper-img.avif",
-
-    links: {
-      live: "https://minesweeper-ts-topaz.vercel.app/",
-    },
-    glowColor: "#32d9ff",
-  },
-  {
-    title: "TaskSpace — Gestor de Tareas con Drag and Drop",
-    description:
-      "Gestor de tareas en columnas desarrollado con React, TypeScript y Tailwind CSS, con búsqueda, edición en línea, drag and drop y persistencia de datos en localStorage.",
-    image: "/images/projects/task-space-img.avif",
-
-    links: {
-      live: "https://task-manager-dnd.vercel.app/",
-    },
-    glowColor: "#b86cff",
-  },
-];
-
-export default function Projects() {
+export default function Projects({ dictionary }: ProjectsProps) {
   const sectionRef = useRef<HTMLElement | null>(null);
 
   useGSAP(
@@ -99,15 +81,15 @@ export default function Projects() {
 
   return (
     <section
-      id="proyectos"
+      id={dictionary.id}
       ref={sectionRef}
       className="w-full px-4 py-6 md:py-8 md:scroll-mt-7 lg:scroll-mt-8"
     >
       <h2 className="font-technor text-display text-3xl sm:text-4xl md:text-5xl xl:text-6xl text-center mb-6 md:mb-10">
-        Mis Proyectos
+        {dictionary.title}
       </h2>
       <ul className="w-full flex flex-col items-center">
-        {projects.map((project, index) => (
+        {dictionary.items.map((project, index) => (
           <li key={project.title} className="contents">
             <span
               aria-hidden="true"
@@ -199,7 +181,7 @@ export default function Projects() {
                           href={project.links.live}
                           target="_blank"
                           rel="noopener noreferrer"
-                          aria-label={`Visitar ${project.title}`}
+                          aria-label={`${dictionary.visitAriaLabel} ${project.title}`}
                           className="inline-flex items-center justify-center cursor-pointer shrink-0"
                         >
                           <ArrowUpRight
@@ -243,7 +225,7 @@ export default function Projects() {
 
                           <Image
                             src={project.image}
-                            alt={`Vista previa de ${project.title}`}
+                            alt={`${dictionary.previewAlt} ${project.title}`}
                             width={1920}
                             height={994}
                             loading="lazy"

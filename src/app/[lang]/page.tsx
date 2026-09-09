@@ -31,7 +31,7 @@ export default async function Home({ params }: PageProps) {
         <Hero />
         <TechCarousel />
         <About dictionary={dictionary.about} />
-        <Projects />
+        <Projects dictionary={dictionary.projects} />
         <Skills />
         <Contact />
       </main>

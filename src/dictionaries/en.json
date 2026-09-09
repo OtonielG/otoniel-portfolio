@@ -7,7 +7,7 @@
     "links": [
       {
         "label": "Home",
-        "href": "#inicio"
+        "href": "#home"
       },
       {
         "label": "About me",
@@ -15,7 +15,7 @@
       },
       {
         "label": "Projects",
-        "href": "#proyectos"
+        "href": "#projects"
       }
     ]
   },
@@ -36,5 +36,40 @@
       "mindset": "I like understanding how things work under the hood, not just making them look good on screen.",
       "personal": "Outside of code, video games and my dogs are usually close by."
     }
+  },
+  "projects": {
+    "id": "projects",
+    "title": "My Projects",
+    "visitAriaLabel": "Visit",
+    "previewAlt": "Preview of",
+    "items": [
+      {
+        "title": "Official Website for La Última Llamada Christian Ministry",
+        "description": "Website built from scratch with a focus on responsive design, performance, and technical SEO, applying good practices for accessibility, semantics, and production-ready web optimization.",
+        "image": "/images/projects/la-ultima-llamada-img.avif",
+        "links": {
+          "live": "https://www.laultimallamada.org/"
+        },
+        "glowColor": "#39ff88"
+      },
+      {
+        "title": "Interactive Minesweeper with Complex Global State Management",
+        "description": "Interactive game built with React, TypeScript, and Tailwind CSS. It uses Context and useReducer to manage the game logic, includes difficulty levels, and stores the best time for each level using localStorage.",
+        "image": "/images/projects/minesweeper-img.avif",
+        "links": {
+          "live": "https://minesweeper-ts-topaz.vercel.app/"
+        },
+        "glowColor": "#32d9ff"
+      },
+      {
+        "title": "TaskSpace — Task Manager with Drag and Drop",
+        "description": "Column-based task manager built with React, TypeScript, and Tailwind CSS, featuring search, inline editing, drag and drop, and data persistence with localStorage.",
+        "image": "/images/projects/task-space-img.avif",
+        "links": {
+          "live": "https://task-manager-dnd.vercel.app/"
+        },
+        "glowColor": "#b86cff"
+      }
+    ]
   }
 }
