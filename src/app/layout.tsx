@@ -3,8 +3,6 @@ import { Geist, Geist_Mono } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
 
-import Headers from "@/components/layout/header";
-
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -52,7 +50,6 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} ${telma.variable} ${technor.variable} ${zodiak.variable} h-full antialiased`}
     >
       <body className="flex justify-center">
-        <Headers />
         {children}
       </body>
     </html>

@@ -1,4 +1,24 @@
 {
+  "navbar": {
+    "ariaLabel": "Navegación principal",
+    "homeAriaLabel": "Ir al inicio",
+    "languageSwitchLabel": "EN",
+    "contactButton": "Contáctame",
+    "links": [
+      {
+        "label": "Inicio",
+        "href": "#inicio"
+      },
+      {
+        "label": "Sobre mí",
+        "href": "#about"
+      },
+      {
+        "label": "Proyectos",
+        "href": "#proyectos"
+      }
+    ]
+  },
   "about": {
     "title": "Sobre Mí",
     "cvButton": "Descargar CV",
