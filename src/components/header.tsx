@@ -1,22 +1,24 @@
 import Image from "next/image";
 import Link from "next/link";
+import type { Lang } from "@/lib/dictionaries";
 
-const navigationLinks = [
-  {
-    label: "Inicio",
-    href: "#inicio",
-  },
-  {
-    label: "Sobre mí",
-    href: "#about",
-  },
-  {
-    label: "Proyectos",
-    href: "#proyectos",
-  },
-];
+type NavbarProps = {
+  dictionary: {
+    ariaLabel: string;
+    homeAriaLabel: string;
+    languageSwitchLabel: string;
+    contactButton: string;
+    links: {
+      label: string;
+      href: string;
+    }[];
+  };
+  lang: Lang;
+};
 
-export default function Navbar() {
+export default function Navbar({ dictionary, lang }: NavbarProps) {
+  const alternateLang = lang === "es" ? "en" : "es";
+
   return (
     <header
       className="
@@ -28,7 +30,7 @@ export default function Navbar() {
   "
     >
       <nav
-        aria-label="Navegación principal"
+        aria-label={dictionary.ariaLabel}
         className="
           flex h-[90%] w-[95%]
           items-center justify-between
@@ -53,7 +55,7 @@ export default function Navbar() {
       >
         <Link
           href="#inicio"
-          aria-label="Ir al inicio"
+          aria-label={dictionary.homeAriaLabel}
           className="
             flex shrink-0 items-center gap-1
             text-foreground
@@ -103,7 +105,7 @@ export default function Navbar() {
             xl:gap-9
           "
         >
-          {navigationLinks.map((link) => (
+          {dictionary.links.map((link) => (
             <Link
               key={link.href}
               href={link.href}
@@ -134,9 +136,12 @@ export default function Navbar() {
         </div>
 
         <div className="flex shrink-0 items-center gap-3 whitespace-nowrap">
-          <span className="text-sm sm:text-base font-bold text-display hover:text-muted hover:scale-105 transition-all duration-300 cursor-pointer">
-            EN
-          </span>
+          <Link
+            href={`/${alternateLang}`}
+            className="text-sm sm:text-base font-bold text-display hover:text-muted hover:scale-105 transition-all duration-300"
+          >
+            {dictionary.languageSwitchLabel}
+          </Link>
 
           <Link
             href="#contacto"
@@ -167,7 +172,7 @@ export default function Navbar() {
               lg:py-2.5
             "
           >
-            Contáctame
+            {dictionary.contactButton}
           </Link>
         </div>
       </nav>

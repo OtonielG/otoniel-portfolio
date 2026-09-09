@@ -26,7 +26,7 @@ export default async function Home({ params }: PageProps) {
 
   return (
     <>
-      <Header />
+      <Header dictionary={dictionary.navbar} lang={lang} />
       <main className="w-full max-w-[1920px]">
         <Hero />
         <TechCarousel />
