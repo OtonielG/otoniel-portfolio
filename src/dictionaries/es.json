@@ -85,5 +85,33 @@
         "title": "Herramientas de desarrollo"
       }
     ]
+  },
+  "contact": {
+    "id": "contact",
+    "title": "Contacto",
+    "description": "Si quieres hablar conmigo sobre una oportunidad, proyecto o colaboración, puedes enviarme un mensaje y te responderé pronto.",
+    "info": [
+      {
+        "label": "Email",
+        "value": "otonielgomez993@gmail.com"
+      },
+      {
+        "label": "Teléfono",
+        "value": "+502 37534666"
+      },
+      {
+        "label": "Ubicación",
+        "value": "Guatemala, Guatemala"
+      }
+    ],
+    "form": {
+      "nameLabel": "Nombre completo",
+      "namePlaceholder": "Tu nombre",
+      "emailLabel": "Correo electrónico",
+      "emailPlaceholder": "correo@ejemplo.com",
+      "messageLabel": "Mensaje",
+      "messagePlaceholder": "Hola, me gustaría hablar contigo sobre...",
+      "submitButton": "Enviar mensaje"
+    }
   }
 }

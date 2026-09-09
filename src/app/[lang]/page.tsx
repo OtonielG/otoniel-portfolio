@@ -33,7 +33,7 @@ export default async function Home({ params }: PageProps) {
         <About dictionary={dictionary.about} />
         <Projects dictionary={dictionary.projects} />
         <Skills dictionary={dictionary.skills} />
-        <Contact />
+        <Contact dictionary={dictionary.contact} />
       </main>
     </>
   );

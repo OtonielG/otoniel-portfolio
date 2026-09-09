@@ -3,32 +3,41 @@
 import { Mail, Phone, MapPin } from "lucide-react";
 
 const contactInfo = [
-  {
-    icon: Mail,
-    label: "Email",
-    value: "otonielgomez993@gmail.com",
-  },
-  {
-    icon: Phone,
-    label: "Teléfono",
-    value: "+502 37534666",
-  },
-  {
-    icon: MapPin,
-    label: "Ubicación",
-    value: "Guatemala, Guatemala",
-  },
+  Mail,
+  Phone,
+  MapPin,
 ];
 
-export default function Contact() {
+type ContactProps = {
+  dictionary: {
+    id: string;
+    title: string;
+    description: string;
+    info: {
+      label: string;
+      value: string;
+    }[];
+    form: {
+      nameLabel: string;
+      namePlaceholder: string;
+      emailLabel: string;
+      emailPlaceholder: string;
+      messageLabel: string;
+      messagePlaceholder: string;
+      submitButton: string;
+    };
+  };
+};
+
+export default function Contact({ dictionary }: ContactProps) {
   return (
     <section
-      id="contacto"
+      id={dictionary.id}
       className="w-full flex flex-col lg:flex-row md:items-center lg:justify-center px-4 py-6 md:py-8 md:scroll-mt-7 lg:scroll-mt-8"
     >
       <div className="w-full lg:w-[45%] 2xl:w-[40%] flex flex-col items-center lg:items-start gap-5 px-8 py-4 sm:py-5 md:py-6 lg:py-7 xl:py-8">
         <h2 className="font-technor text-display text-3xl sm:text-4xl md:text-5xl xl:text-6xl text-center lg:text-start">
-          Contacto
+          {dictionary.title}
         </h2>
         <p
           className="
@@ -39,21 +48,20 @@ export default function Contact() {
             xl:text-xl
           "
         >
-          Si quieres hablar conmigo sobre una oportunidad, proyecto o
-          colaboración, puedes enviarme un mensaje y te responderé pronto.
+          {dictionary.description}
         </p>
         <ul className="flex flex-col sm:flex-row justify-center flex-wrap lg:justify-start lg:flex-col gap-4">
-          {contactInfo.map((info, index) => (
-            <li key={index} className="flex items-center gap-3">
+          {contactInfo.map((Icon, index) => (
+            <li key={dictionary.info[index].label} className="flex items-center gap-3">
               <div className="bg-primary/10 p-2 border border-white/20 rounded-full">
-                <info.icon className="w-3 h-3 md:w-4 md:h-4 xl:w-5 xl:h-5 text-primary" />
+                <Icon className="w-3 h-3 md:w-4 md:h-4 xl:w-5 xl:h-5 text-primary" />
               </div>
               <div>
                 <p className="font-semibold text-foreground/90 text-sm md:text-base xl:text-lg">
-                  {info.label}
+                  {dictionary.info[index].label}
                 </p>
                 <p className="text-muted text-xs md:text-sm xl:text-base">
-                  {info.value}
+                  {dictionary.info[index].value}
                 </p>
               </div>
             </li>
@@ -76,13 +84,13 @@ export default function Contact() {
             htmlFor="name"
             className="font-semibold text-foreground/80 text-sm md:text-base"
           >
-            Nombre completo
+            {dictionary.form.nameLabel}
           </label>
 
           <input
             id="name"
             type="text"
-            placeholder="Tu nombre"
+            placeholder={dictionary.form.namePlaceholder}
             className="
               w-full rounded-md
               border border-white/20
@@ -103,13 +111,13 @@ export default function Contact() {
             htmlFor="email"
             className="font-semibold text-foreground/80 text-sm md:text-base"
           >
-            Correo electrónico
+            {dictionary.form.emailLabel}
           </label>
 
           <input
             id="email"
             type="email"
-            placeholder="correo@ejemplo.com"
+            placeholder={dictionary.form.emailPlaceholder}
             className="
               w-full rounded-md
               border border-white/20
@@ -130,12 +138,12 @@ export default function Contact() {
             htmlFor="message"
             className="font-semibold text-foreground/80 text-sm md:text-base"
           >
-            Mensaje
+            {dictionary.form.messageLabel}
           </label>
 
           <textarea
             id="message"
-            placeholder="Hola, me gustaría hablar contigo sobre..."
+            placeholder={dictionary.form.messagePlaceholder}
             className="
               min-h-36 w-full resize-none rounded-md
               border border-white/20
@@ -166,7 +174,7 @@ export default function Contact() {
             cursor-pointer
           "
         >
-          Enviar mensaje
+          {dictionary.form.submitButton}
         </button>
       </form>
     </section>
