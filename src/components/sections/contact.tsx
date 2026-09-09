@@ -50,7 +50,7 @@ export default function Contact({ dictionary }: ContactProps) {
   return (
     <section
       id={dictionary.id}
-      className="w-full flex flex-col lg:flex-row md:items-center lg:justify-center px-4 py-6 md:py-8 md:scroll-mt-7 lg:scroll-mt-8"
+      className="w-full flex flex-col lg:flex-row md:items-center lg:justify-center px-4 py-6 md:py-8 md:scroll-mt-1"
     >
       <div className="w-full lg:w-[45%] 2xl:w-[40%] flex flex-col items-center lg:items-start gap-5 px-8 py-4 sm:py-5 md:py-6 lg:py-7 xl:py-8">
         <h2 className="font-technor text-display text-3xl sm:text-4xl md:text-5xl xl:text-6xl text-center lg:text-start">
