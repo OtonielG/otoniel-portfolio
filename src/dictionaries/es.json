@@ -111,7 +111,8 @@
       "emailPlaceholder": "correo@ejemplo.com",
       "messageLabel": "Mensaje",
       "messagePlaceholder": "Hola, me gustaría hablar contigo sobre...",
-      "submitButton": "Enviar mensaje"
+      "submitButton": "Enviar mensaje",
+      "successMessage": "Mensaje enviado correctamente"
     }
   }
 }

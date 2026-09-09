@@ -1,6 +1,7 @@
 "use client";
 
-import { Mail, Phone, MapPin } from "lucide-react";
+import { useEffect, useState } from "react";
+import { CheckCircle2, Mail, Phone, MapPin } from "lucide-react";
 
 const contactInfo = [
   Mail,
@@ -25,11 +26,27 @@ type ContactProps = {
       messageLabel: string;
       messagePlaceholder: string;
       submitButton: string;
+      successMessage: string;
     };
   };
 };
 
 export default function Contact({ dictionary }: ContactProps) {
+  const [submitStatus, setSubmitStatus] = useState<
+    "idle" | "submitting" | "success"
+  >("idle");
+
+  useEffect(() => {
+    if (submitStatus === "idle") return;
+
+    const timeout = setTimeout(
+      () => setSubmitStatus(submitStatus === "submitting" ? "success" : "idle"),
+      submitStatus === "submitting" ? 2000 : 4000,
+    );
+
+    return () => clearTimeout(timeout);
+  }, [submitStatus]);
+
   return (
     <section
       id={dictionary.id}
@@ -72,6 +89,7 @@ export default function Contact({ dictionary }: ContactProps) {
         onSubmit={(e) => {
           e.preventDefault();
           e.currentTarget.reset();
+          setSubmitStatus("submitting");
         }}
         className="
           w-full md:w-[90%] lg:w-[45%] 2xl:w-[40%]
@@ -161,6 +179,7 @@ export default function Contact({ dictionary }: ContactProps) {
 
         <button
           type="submit"
+          disabled={submitStatus === "submitting"}
           className="
             w-full lg:w-auto
             mt-2 self-start rounded-md
@@ -172,11 +191,22 @@ export default function Contact({ dictionary }: ContactProps) {
             hover:opacity-70
             md:text-base
             cursor-pointer
+            disabled:cursor-not-allowed disabled:opacity-50
           "
         >
           {dictionary.form.submitButton}
         </button>
       </form>
+      {submitStatus === "success" && (
+        <div
+          role="status"
+          aria-live="polite"
+          className="fixed bottom-6 left-1/2 z-50 flex -translate-x-1/2 items-center gap-2 whitespace-nowrap rounded-md border border-white/20 bg-background px-4 py-3 text-sm text-foreground shadow-lg"
+        >
+          <CheckCircle2 className="h-4 w-4 text-primary" />
+          {dictionary.form.successMessage}
+        </div>
+      )}
     </section>
   );
 }
